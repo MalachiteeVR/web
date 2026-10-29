@@ -54,30 +54,6 @@
     </div>
   </section>
 
-  <section id="status">
-    <div class="section-label">Live</div>
-    <h2>Server status.</h2>
-    <div class="status-block">
-      <div class="stat-block">
-        <span class="stat-label"><span class="status-dot" id="statusDot"></span> Status</span>
-        <span class="stat-num" id="statusText">Checking…</span>
-      </div>
-      <div class="stat-block">
-        <span class="stat-label">Players</span>
-        <span class="stat-num" id="statusPlayers">&mdash;</span>
-      </div>
-      <div class="stat-block">
-        <span class="stat-label">Version</span>
-        <span class="stat-num" id="statusVersion">&mdash;</span>
-      </div>
-      <div class="stat-block">
-        <span class="stat-label">Latency</span>
-        <span class="stat-num" id="statusLatency">&mdash;</span>
-      </div>
-    </div>
-    <p class="status-updated" id="statusUpdated">Checking server…</p>
-  </section>
-
   <section id="adventure">
     <div class="section-label">The world is not safe</div>
     <h2>Can you outlast it?</h2>
@@ -162,115 +138,7 @@
     <a href="#top">Back to top &#8593;</a>
   <span><a href="https://ko-fi.com/malachitevr" target="_blank" rel="noopener noreferrer">Support MalachiteVR on Ko-fi</a></span></footer>
 
-<script>
-(function () {
 
-  const QUERY_SERVER = 'https://query.malachitevr.win/query';
-  const POLL_MS = 30000;
-
-  const dot = document.getElementById('statusDot');
-  const text = document.getElementById('statusText');
-  const updated = document.getElementById('statusUpdated');
-  const players = document.getElementById('statusPlayers');
-  const version = document.getElementById('statusVersion');
-  const latency = document.getElementById('statusLatency');
-
-  function setState(state) {
-    dot.className = 'status-dot ' + state;
-  }
-
-  function stamp() {
-    const now = new Date();
-
-    updated.textContent =
-      'Last checked ' +
-      now.toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-      });
-  }
-
-  async function checkStatus() {
-
-    try {
-
-      const res = await fetch(
-        QUERY_SERVER + '?cache=' + Date.now(),
-        {
-          cache: 'no-store'
-        }
-      );
-
-      if (!res.ok) {
-        throw new Error('Query server returned HTTP ' + res.status);
-      }
-
-      const data = await res.json();
-
-      if (data.online) {
-
-        setState('online');
-
-        text.textContent = 'Online';
-
-        if (
-          data.players &&
-          typeof data.players.online === 'number'
-        ) {
-          players.textContent =
-            `${data.players.online} / ${data.players.max}`;
-        } else {
-          players.textContent = '—';
-        }
-
-        version.textContent =
-          data.version || '—';
-
-        latency.textContent =
-          typeof data.latency === 'number'
-            ? data.latency + ' ms'
-            : '—';
-
-      } else {
-
-        setState('offline');
-
-        text.textContent = 'Offline';
-
-        players.textContent = '—';
-        version.textContent = '—';
-        latency.textContent = '—';
-      }
-
-    } catch (err) {
-
-      console.error(
-        'Minecraft query failed:',
-        err
-      );
-
-      setState('unknown');
-
-      text.textContent = 'Unable to check';
-
-      players.textContent = '—';
-      version.textContent = '—';
-      latency.textContent = '—';
-    }
-
-    stamp();
-  }
-
-  checkStatus();
-
-  setInterval(
-    checkStatus,
-    POLL_MS
-  );
-
-})();
-</script>
 <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
 <script>
   kofiWidgetOverlay.draw('malachitevr', {

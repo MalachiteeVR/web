@@ -139,23 +139,6 @@ footer{
 }
 footer a{color:var(--blue); text-decoration:none}
 
-/* --- Server status widget --- */
-.status-block{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:10px}
-.stat-block{
-  display:flex; flex-direction:column; gap:6px; align-items:flex-start;
-  background:#001e00; border:2px inset #44cc44; padding:8px;
-}
-.stat-label{display:flex; align-items:center; gap:6px; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.03em}
-.stat-num{font:bold 20px "Courier New",monospace; color:var(--yellow)}
-.status-dot{
-  width:10px; height:10px; border-radius:50%; display:inline-block;
-  background:#666; box-shadow:0 0 6px #666; border:1px solid #000;
-}
-.status-dot.online{background:var(--green); box-shadow:0 0 8px var(--green)}
-.status-dot.offline{background:#ff4444; box-shadow:0 0 8px #ff4444}
-.status-dot.unknown{background:var(--yellow); box-shadow:0 0 8px var(--yellow)}
-.status-updated{margin:10px 0 0; color:var(--muted); font:11px "Courier New",monospace; text-align:right}
-
 @media(max-width:700px){
   nav{flex-direction:column; align-items:stretch}
   .nav-logo{text-align:center}
