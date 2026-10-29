@@ -31,7 +31,7 @@ jobs:
               text = text.replace('href="https://altcore.app/"', 'href="altcore.html"')
 
               if path.name != 'altcore.html' and 'href="altcore.html"' not in text:
-                  nav_match = re.search(r'<nav\\b[^>]*>.*?</nav>', text, flags=re.I | re.S)
+                  nav_match = re.search(r'<nav\b[^>]*>.*?</nav>', text, flags=re.I | re.S)
                   if nav_match:
                       nav = nav_match.group(0)
                       if 'class="nav-links"' in nav:
