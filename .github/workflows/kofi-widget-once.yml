@@ -1,0 +1,84 @@
+name: Add Ko-fi floating widget to all HTML pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  add-kofi-widget:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Add Ko-fi floating widget to HTML pages
+        shell: python
+        run: |
+          from pathlib import Path
+
+          script = """<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+          <script>
+            kofiWidgetOverlay.draw('malachitevr', {
+              'type': 'floating-chat',
+              'floating-chat.donateButton.text': 'Support me',
+              'floating-chat.donateButton.background-color': '#5cb85c',
+              'floating-chat.donateButton.text-color': '#fff'
+            });
+          </script>"""
+
+          changed = []
+          skipped = []
+
+          for path in Path('.').rglob('*.html'):
+              if '.git' in path.parts or path.name == 'abuseipdb-verification.html':
+                  skipped.append(str(path))
+                  continue
+
+              text = path.read_text(encoding='utf-8')
+
+              if 'kofiWidgetOverlay.draw' in text:
+                  continue
+
+              marker = '</body>'
+              if marker not in text:
+                  skipped.append(str(path))
+                  continue
+
+              text = text.replace(marker, f'{script}\n{marker}', 1)
+              path.write_text(text, encoding='utf-8')
+              changed.append(str(path))
+
+          print(f'Updated {len(changed)} HTML pages:')
+          for path in changed:
+              print(f' - {path}')
+          print(f'Skipped {len(skipped)} files without a usable HTML body or intentionally excluded.')
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add '*.html'
+          if git diff --cached --quiet; then
+            echo "No HTML files needed updating."
+            exit 0
+          fi
+          git commit -m "Add Ko-fi floating widget to all webpages"
+          git push
+
+      - name: Remove one-time workflow
+        if: success()
+        shell: bash
+        run: |
+          rm -f .github/workflows/kofi-widget-once.yml
+          git add .github/workflows/kofi-widget-once.yml
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Remove one-time Ko-fi widget workflow"
+          git push
