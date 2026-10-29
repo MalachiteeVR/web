@@ -1,0 +1,79 @@
+name: Add Ko-fi link to all HTML pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  add-kofi-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Add Ko-fi links to HTML pages
+        shell: python
+        run: |
+          from pathlib import Path
+
+          kofi_url = "https://ko-fi.com/malachitevr"
+          link = f'<a href="{kofi_url}" target="_blank" rel="noopener noreferrer">Support MalachiteVR on Ko-fi</a>'
+
+          changed = []
+          for path in Path(".").glob("*.html"):
+              text = path.read_text(encoding="utf-8")
+
+              if kofi_url in text:
+                  continue
+
+              if "</footer>" in text:
+                  text = text.replace(
+                      "</footer>",
+                      f'<span>{link}</span></footer>',
+                      1,
+                  )
+              elif "</body>" in text:
+                  text = text.replace(
+                      "</body>",
+                      f'<p style="text-align:center;margin:24px 0;">{link}</p>\n</body>',
+                      1,
+                  )
+              else:
+                  continue
+
+              path.write_text(text, encoding="utf-8")
+              changed.append(str(path))
+
+          print(f"Updated {len(changed)} HTML pages:")
+          for path in changed:
+              print(f" - {path}")
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add '*.html'
+          if git diff --cached --quiet; then
+            echo "No HTML files needed updating."
+            exit 0
+          fi
+          git commit -m "Add Ko-fi links to all HTML pages"
+          git push
+
+      - name: Remove one-time workflow
+        if: success()
+        shell: bash
+        run: |
+          rm -f .github/workflows/kofi-links-once.yml
+          git add .github/workflows/kofi-links-once.yml
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "Remove one-time Ko-fi link workflow"
+          git push
