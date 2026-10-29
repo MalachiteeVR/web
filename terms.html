@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="index.css" />
   <style>
     .terms-meta { color: #aaffaa; font: 12px "Courier New", monospace; margin-bottom: 14px; }
+    .altcore-branding { display:flex; justify-content:center; margin:0 auto 16px; padding:8px 12px; }
+    .altcore-branding img { display:block; width:min(620px, 88%); height:auto; filter:drop-shadow(0 0 8px rgba(0,255,102,.18)); }
     .terms-toc { background:#001e00; border:2px inset #44cc44; padding:12px 18px; margin:14px 0 18px; }
     .terms-toc a { color:#ffff66; }
     .terms-section { margin:22px 0; }
@@ -20,6 +22,7 @@
     .notice { background:#ffffcc; color:#000; border:2px solid #006600; padding:10px 12px; margin:14px 0; }
     .notice strong { color:#003300; }
     .last-updated { color:#ffff00; }
+    @media(max-width:700px){ .altcore-branding img { width:96%; } }
   </style>
 </head>
 <body>
@@ -34,6 +37,9 @@
   </nav>
 
   <div class="page-hero">
+    <div class="altcore-branding">
+      <img src="altcore-logo.svg" alt="Altcore logo" />
+    </div>
     <div class="hero-tag">ALTCORE · LEGAL</div>
     <h1>Terms of Service</h1>
     <p class="hero-sub">The rules for using Altcore, a privacy-focused social platform designed to keep the useful parts of Discord without turning basic features into a subscription tier.</p>
