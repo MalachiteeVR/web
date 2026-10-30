@@ -14,6 +14,7 @@
   <title>My Current Work — MalachiteVR</title>
   <link rel="stylesheet" href="my-current-work.css" />
   <link rel="stylesheet" href="retro-2000s.css" />
+  <link rel="stylesheet" href="vista-page-fixes.css" />
 </head>
 <body>
   <nav>
@@ -33,25 +34,24 @@
 </nav>
 
   <div class="wip-bar">&#9888; This website is a work in progress. Some info may not be correct.</div>
-  <marquee behavior="scroll" direction="left" scrollamount="5">*** CURRENT WORK LOG *** ALTCORE • SERVERS • NETWORKING • WEB • VR • LINUX • HARDWARE ***</marquee>
+  <marquee behavior="scroll" direction="left" scrollamount="5">*** CURRENT WORK LOG *** ALTCORE • SERVERS • NETWORKING • SOFTWARE • VR • HARDWARE ***</marquee>
 
   <main>
-    <div class="hero">
-      <div class="eyebrow">Workbench · Systems in motion</div>
-      <h1>What I'm <span style="color:#ffff00;">building.</span></h1>
-      <p>A running snapshot of the software, platforms, servers, infrastructure, experiments, and hardware projects currently taking up space on the workbench.</p>
+    <section class="hero">
+      <div class="hero-tag">Workbench · Systems in motion</div>
+      <h1>What I'm <span>building.</span></h1>
+      <p class="hero-sub">A running snapshot of the software, platforms, servers, infrastructure, experiments, and hardware projects currently taking up space on the workbench.</p>
       <p><strong>Current focus:</strong> Altcore development, MalachiteVR infrastructure, Minecraft, VR, networking, Linux, self-hosting, web development, and hardware optimization.</p>
-    </div>
+    </section>
 
     <section>
       <div class="section-label">Active builds</div>
       <h2>Currently in the workshop.</h2>
       <div class="work-grid">
-
         <article class="work-card featured">
           <span class="number">01</span><span class="status">LAUNCHED</span>
           <h3>Altcore</h3>
-          <p class="description">A new social platform being developed under MalachiteeVR, built around privacy, customization, performance, and avoiding unnecessary platform bloat and paywalls.</p>
+          <p class="description">A new social platform being developed under the MalachiteVR umbrella, built around privacy, customization, performance, and avoiding unnecessary platform bloat and paywalls.</p>
           <ul class="details">
             <li>Rebranding and extending the Fluxer codebase</li>
             <li>Custom Altcore branding, web presence, and legal pages</li>
@@ -59,10 +59,10 @@
             <li>DM folders for organizing conversations and friends</li>
             <li>Custom instance and self-hosting infrastructure</li>
           </ul>
-          <span class="tag">Altcore</span><span class="tag">Rust</span><span class="tag">Web</span><span class="tag">Self-hosting</span>
+          <span class="tag">Rust</span><span class="tag">Web</span><span class="tag">Self-hosted</span>
         </article>
 
-        <article class="work-card featured">
+        <article class="work-card">
           <span class="number">02</span><span class="status">ACTIVE</span>
           <h3>MalachiteVR Web &amp; Infrastructure</h3>
           <p class="description">Maintaining and expanding malachitevr.win as the home for projects, technical documentation, services, experiments, and the growing Altcore ecosystem.</p>
@@ -75,132 +75,8 @@
           </ul>
           <span class="tag">Web</span><span class="tag">HTML</span><span class="tag">GitHub</span><span class="tag">Cloudflare</span>
         </article>
-
-        <article class="work-card featured">
-          <span class="number">03</span><span class="status">ACTIVE</span>
-          <h3>FantasyJava+ Minecraft Server</h3>
-          <p class="description">A heavily modded Minecraft 1.20.1 server combining Forge, Create, Ice and Fire, Vivecraft, TACZ, the Wither Storm, and a large collection of supporting mods.</p>
-          <ul class="details">
-            <li>Forge 47.4.20 with roughly 300 mods</li>
-            <li>Java 21 and a large dedicated-server memory allocation</li>
-            <li>C2ME and performance-focused server configuration</li>
-            <li>Vivecraft and VR-focused gameplay integration</li>
-            <li>Server networking, logs, compatibility, and troubleshooting</li>
-          </ul>
-          <span class="tag">Minecraft</span><span class="tag">Forge</span><span class="tag">Java</span><span class="tag">VR</span>
-        </article>
-
-        <article class="work-card featured">
-          <span class="number">04</span><span class="status">ACTIVE</span>
-          <h3>VR &amp; Quest 2 Infrastructure</h3>
-          <p class="description">Working on VRChat, Quest 2 connectivity, Virtual Desktop, full-body tracking, and the hardware/software stack that connects everything together.</p>
-          <ul class="details">
-            <li>Quest 2 and Virtual Desktop performance tuning</li>
-            <li>HaritoraX 2/2A and SlimeVR full-body tracking</li>
-            <li>OSC, VMT, and VRChat integration</li>
-            <li>USB-C, USB networking, Link, and charging behavior testing</li>
-            <li>VRChat Unity SDK and avatar-development experimentation</li>
-          </ul>
-          <span class="tag">VR</span><span class="tag">Quest 2</span><span class="tag">VRChat</span><span class="tag">OSC</span>
-        </article>
-
-        <article class="work-card">
-          <span class="number">05</span><span class="status">ACTIVE</span>
-          <h3>Linux on ARM &amp; Chromebook</h3>
-          <p class="description">Experimenting with native ARM Linux on Chromebook hardware, including the MT8183 platform, Panfrost graphics, FEX, and running desktop software in unusual environments.</p>
-          <ul class="details">
-            <li>Lenovo IdeaPad Flex 3 Chromebook and MT8183</li>
-            <li>Ubuntu/Debian-based ARM Linux experimentation</li>
-            <li>Mali-G72 and Panfrost graphics</li>
-            <li>FEX and x86 application compatibility</li>
-            <li>Minecraft/Prism Launcher performance testing</li>
-          </ul>
-          <span class="tag">Linux</span><span class="tag">ARM64</span><span class="tag">FEX</span><span class="tag">Panfrost</span>
-        </article>
-
-        <article class="work-card">
-          <span class="number">06</span><span class="status">ACTIVE</span>
-          <h3>PC Performance &amp; Hardware</h3>
-          <p class="description">Continuing to tune and understand the SuperEdge M5900X PRO, including CPU behavior, GPU performance, thermals, memory, cooling, and power delivery.</p>
-          <ul class="details">
-            <li>Ryzen 9 5900XT performance and stability testing</li>
-            <li>Curve Optimizer, PBO, clocks, and workload tuning</li>
-            <li>RTX 3060 performance and VRAM tuning</li>
-            <li>Thermal, WHEA, OCCT, and benchmark analysis</li>
-            <li>Cooling, airflow, motherboard, and PSU investigations</li>
-          </ul>
-          <span class="tag">Ryzen</span><span class="tag">RTX 3060</span><span class="tag">Hardware</span><span class="tag">Diagnostics</span>
-        </article>
-
       </div>
-    </section>
-
-    <section>
-      <div class="section-label">Infrastructure lab</div>
-      <h2>Networking, self-hosting, and systems work.</h2>
-      <div class="work-grid">
-
-        <article class="work-card">
-          <span class="number">LAB-01</span>
-          <h3>Cloud &amp; Self-Hosted Services</h3>
-          <p class="description">Using cloud VMs and home infrastructure together to host services, experiment with public networking, and work around the limitations of residential connections.</p>
-          <span class="tag">Azure</span><span class="tag">Cloud</span><span class="tag">Linux</span><span class="tag">Self-hosting</span>
-        </article>
-
-        <article class="work-card">
-          <span class="number">LAB-02</span>
-          <h3>Networking &amp; Tunneling</h3>
-          <p class="description">Working with Cloudflare Tunnel, Tailscale, port forwarding, USB networking, TCP/UDP services, DNS, and the various ways to get machines talking across the internet.</p>
-          <span class="tag">Networking</span><span class="tag">Cloudflare</span><span class="tag">Tailscale</span><span class="tag">TCP/IP</span>
-        </article>
-
-        <article class="work-card">
-          <span class="number">LAB-03</span>
-          <h3>Virtualization &amp; Compatibility</h3>
-          <p class="description">Experimenting with virtual machines, Windows/Linux interoperability, EFI environments, emulation, and getting software to run where it was never quite meant to.</p>
-          <span class="tag">VMware</span><span class="tag">Windows</span><span class="tag">Linux</span><span class="tag">EFI</span>
-        </article>
-
-        <article class="work-card">
-          <span class="number">LAB-04</span>
-          <h3>Software &amp; Systems Programming</h3>
-          <p class="description">Exploring programming from high-level applications down toward lower-level systems work, including Rust, Python, APIs, firmware, EFI programs, and game-development concepts.</p>
-          <span class="tag">Rust</span><span class="tag">Python</span><span class="tag">Systems</span><span class="tag">Programming</span>
-        </article>
-
-        <article class="work-card">
-          <span class="number">LAB-05</span>
-          <h3>AI &amp; Automation</h3>
-          <p class="description">Experimenting with AI tooling, local inference, APIs, automation, and using software to glue otherwise unrelated systems together.</p>
-          <span class="tag">AI</span><span class="tag">Automation</span><span class="tag">APIs</span>
-        </article>
-
-        <article class="work-card">
-          <span class="number">LAB-06</span>
-          <h3>Diagnostics &amp; Reverse Engineering</h3>
-          <p class="description">Digging through logs, device behavior, firmware, drivers, protocols, and hardware failures to figure out what is actually happening instead of stopping at the error message.</p>
-          <span class="tag">Diagnostics</span><span class="tag">Firmware</span><span class="tag">Hardware</span><span class="tag">Reverse Engineering</span>
-        </article>
-
-      </div>
-    </section>
-
-    <section>
-      <div class="section-label">Lab notes</div>
-      <h2>What ties it together.</h2>
-      <div class="note"><strong>Build it. Break it. Figure out why.</strong> The common thread is systems work: building platforms, keeping servers alive, making networks cooperate, getting software to talk to other software, squeezing performance out of hardware, and learning what is happening underneath the interface. Right now, that means pushing Altcore toward launch while continuing to expand the MalachiteVR ecosystem around Minecraft, VR, self-hosting, Linux, and experimental hardware.</div>
     </section>
   </main>
-
-  <footer><span>MalachiteeVR — current work log</span><a href="index.html">Return to portfolio</a><span><a href="https://ko-fi.com/malachitevr" target="_blank" rel="noopener noreferrer">Support MalachiteVR on Ko-fi</a></span></footer>
-<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
-<script>
-  kofiWidgetOverlay.draw('malachitevr', {
-    'type': 'floating-chat',
-    'floating-chat.donateButton.text': 'Support me',
-    'floating-chat.donateButton.background-color': '#5cb85c',
-    'floating-chat.donateButton.text-color': '#fff'
-  });
-</script>
 </body>
 </html>
