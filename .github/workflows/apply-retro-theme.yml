@@ -1,0 +1,65 @@
+name: Apply 2000s Retro Theme
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  theme:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add retro theme to site pages
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          for file in *.html; do
+            case "$file" in
+              abuseipdb-verification.html|malachite-times-php-security.html)
+                continue
+                ;;
+            esac
+
+            if grep -q 'retro-2000s.css' "$file"; then
+              continue
+            fi
+
+            python3 - "$file" <<'PY'
+import pathlib
+import sys
+
+path = pathlib.Path(sys.argv[1])
+text = path.read_text(encoding="utf-8")
+marker = '<link rel="stylesheet" href="retro-2000s.css" />'
+if marker in text or '</head>' not in text.lower():
+    raise SystemExit(0)
+
+idx = text.lower().rfind('</head>')
+text = text[:idx] + '  ' + marker + '\n' + text[idx:]
+path.write_text(text, encoding="utf-8")
+PY
+          done
+
+      - name: Remove one-shot workflow
+        run: rm -f .github/workflows/apply-retro-theme.yml
+
+      - name: Commit and push theme update
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add '*.html' .github/workflows/apply-retro-theme.yml
+          if git diff --cached --quiet; then
+            echo "No changes needed."
+            exit 0
+          fi
+          git commit -m "Apply 2000s retro web theme"
+          git push
