@@ -1,60 +1,58 @@
-/* MALACHITEVR 2000s EDITION
-   Deliberately old-school personal homepage styling.
-   Think 2002 PC enthusiast site, not modern SaaS dashboard.
+/* MALACHITEEVR - WINDOWS VISTA / AERO EDITION
+   Vista-inspired glass, gradients, soft shadows and Segoe UI.
+   Keeps the site's Malachite green identity while borrowing Vista-era UI cues.
 */
 
 * { box-sizing: border-box !important; }
 
-html, body {
-  min-height: 100% !important;
-}
+html, body { min-height: 100% !important; }
 
 html {
-  background: #001900 !important;
+  background: #071b12 !important;
 }
 
 body {
   margin: 0 !important;
-  padding: 0 0 35px !important;
-  color: #001500 !important;
-  background-color: #c6d9c6 !important;
-  background-image:
-    radial-gradient(#7d9b7d 0.8px, transparent 0.8px),
-    linear-gradient(45deg, rgba(255,255,255,.35) 25%, transparent 25%, transparent 75%, rgba(255,255,255,.35) 75%) !important;
-  background-size: 6px 6px, 12px 12px !important;
-  font-family: "Times New Roman", Times, serif !important;
-  font-size: 16px !important;
-  line-height: 1.35 !important;
+  padding: 0 0 36px !important;
+  color: #17251d !important;
+  background:
+    radial-gradient(circle at 50% -10%, rgba(255,255,255,.9), transparent 32%),
+    linear-gradient(180deg, #dceee5 0%, #b8d6c5 38%, #89b39b 100%) !important;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.45 !important;
 }
 
 body::before {
-  content: "*** WELCOME TO MALACHITEVR.WIN *** PERSONAL WEB SITE *** EST. 2026 ***" !important;
+  content: "MALACHITEEVR.WIN" !important;
   display: block !important;
   width: 100% !important;
-  height: auto !important;
-  padding: 4px !important;
+  padding: 8px 14px !important;
   margin: 0 !important;
-  background: #003300 !important;
-  color: #ccff00 !important;
-  border: 0 !important;
-  border-bottom: 3px ridge #9acd32 !important;
+  color: #ffffff !important;
+  background: linear-gradient(180deg, rgba(18,91,53,.96), rgba(4,48,27,.97)) !important;
+  border-bottom: 1px solid rgba(255,255,255,.65) !important;
+  box-shadow: 0 2px 9px rgba(0,0,0,.35) !important;
   text-align: center !important;
-  font: bold 13px "Courier New", monospace !important;
-  letter-spacing: 1px !important;
+  text-shadow: 0 1px 2px #000 !important;
+  font: 600 14px "Segoe UI", Tahoma, sans-serif !important;
+  letter-spacing: 2px !important;
 }
 
 body::after {
-  content: "Best viewed at 1024x768  |  HTML 4.01 compatible  |  Thanks for visiting!  |  [ PAGE LOADED ]" !important;
+  content: "MalachiteeVR  •  Personal Web Site  •  Best viewed with Aero" !important;
   display: block !important;
-  width: 760px !important;
-  max-width: 94% !important;
-  margin: 10px auto 0 !important;
-  padding: 5px !important;
-  background: #d8d8d8 !important;
-  color: #003300 !important;
-  border: 2px outset #ffffff !important;
+  width: 900px !important;
+  max-width: 92% !important;
+  margin: 14px auto 0 !important;
+  padding: 7px 12px !important;
+  color: #31543f !important;
+  background: rgba(240,255,247,.72) !important;
+  border: 1px solid rgba(255,255,255,.95) !important;
+  border-radius: 7px !important;
+  box-shadow: 0 1px 4px rgba(0,0,0,.22), inset 0 1px rgba(255,255,255,.9) !important;
   text-align: center !important;
-  font: bold 11px "Courier New", monospace !important;
+  font: 12px "Segoe UI", Tahoma, sans-serif !important;
 }
 
 nav,
@@ -63,77 +61,72 @@ nav,
   top: auto !important;
   left: auto !important;
   right: auto !important;
-  width: 760px !important;
-  max-width: 94% !important;
-  margin: 10px auto 8px !important;
-  padding: 7px !important;
+  width: 900px !important;
+  max-width: 92% !important;
+  margin: 14px auto 12px !important;
+  padding: 9px !important;
   min-height: 0 !important;
   display: block !important;
-  background: #006400 !important;
-  border: 4px ridge #d8ffd8 !important;
-  border-radius: 0 !important;
-  box-shadow: 4px 4px 0 #333 !important;
+  background: linear-gradient(180deg, rgba(232,255,244,.9), rgba(170,211,188,.84)) !important;
+  border: 1px solid rgba(255,255,255,.95) !important;
+  border-radius: 9px !important;
+  box-shadow: 0 3px 12px rgba(0,0,0,.32), inset 0 1px rgba(255,255,255,.95) !important;
   text-align: center !important;
 }
 
 .nav-logo,
 .topnav .brand {
   display: block !important;
-  margin: 0 0 6px !important;
-  color: #ffff00 !important;
+  margin: 0 0 8px !important;
+  color: #ffffff !important;
   text-decoration: none !important;
-  text-shadow: 2px 2px #000 !important;
-  font: bold 28px "Times New Roman", serif !important;
-  letter-spacing: 2px !important;
+  text-shadow: 0 1px 2px #123b25, 0 0 7px rgba(255,255,255,.45) !important;
+  font: 600 28px "Segoe UI", Tahoma, sans-serif !important;
+  letter-spacing: 1px !important;
 }
 
 .nav-links {
   display: block !important;
   margin: 0 !important;
   padding: 5px !important;
-  background: #d0d0d0 !important;
-  border: 3px inset #eee !important;
+  background: rgba(242,255,248,.58) !important;
+  border: 1px solid rgba(255,255,255,.9) !important;
+  border-radius: 6px !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.85) !important;
   text-align: center !important;
 }
 
-.nav-links li {
-  display: inline !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+.nav-links li { display: inline !important; margin: 0 !important; padding: 0 !important; }
 
 .nav-links a,
 .topnav > a:not(.brand):not(.back-btn) {
   display: inline-block !important;
   margin: 2px !important;
-  padding: 3px 8px !important;
+  padding: 5px 12px !important;
   min-width: 0 !important;
-  color: #000 !important;
-  background: linear-gradient(#ffffff, #dddddd 48%, #aaaaaa 50%, #eeeeee) !important;
-  border: 2px outset #ffffff !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  text-decoration: underline !important;
+  color: #163d27 !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(204,232,215,.9)) !important;
+  border: 1px solid #8aae99 !important;
+  border-radius: 5px !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.95), 0 1px 2px rgba(0,0,0,.2) !important;
+  text-decoration: none !important;
   text-transform: none !important;
   text-align: center !important;
-  font: bold 12px Arial, Helvetica, sans-serif !important;
+  font: 600 13px "Segoe UI", Tahoma, sans-serif !important;
 }
 
 .nav-links a:hover,
 .nav-links a.active,
 .topnav > a:not(.brand):not(.back-btn):hover {
   color: #fff !important;
-  background: #000080 !important;
-  border-style: inset !important;
+  background: linear-gradient(180deg, #7fc89d, #32845a) !important;
+  border-color: #236640 !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.4), 0 0 7px rgba(65,153,99,.6) !important;
 }
 
-a {
-  color: #0000ee !important;
-  text-decoration: underline !important;
-}
-
-a:visited { color: #551a8b !important; }
-a:hover { color: #ff0000 !important; }
+a { color: #126d3d !important; text-decoration: underline !important; }
+a:visited { color: #245c43 !important; }
+a:hover { color: #0b9a4c !important; }
 
 body > div[style*="position:fixed"] {
   position: relative !important;
@@ -141,28 +134,31 @@ body > div[style*="position:fixed"] {
   left: auto !important;
   right: auto !important;
   z-index: 1 !important;
-  width: 760px !important;
-  max-width: 94% !important;
-  margin: 4px auto !important;
-  padding: 3px 6px !important;
-  background: #ffffcc !important;
-  color: #000 !important;
-  border: 2px solid #800000 !important;
-  font: bold 11px Arial, sans-serif !important;
-  box-shadow: none !important;
-  backdrop-filter: none !important;
+  width: 900px !important;
+  max-width: 92% !important;
+  margin: 6px auto !important;
+  padding: 7px 10px !important;
+  background: rgba(255,255,220,.78) !important;
+  color: #27351e !important;
+  border: 1px solid rgba(255,255,255,.95) !important;
+  border-radius: 6px !important;
+  font: 600 12px "Segoe UI", Tahoma, sans-serif !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2), inset 0 1px rgba(255,255,255,.8) !important;
+  backdrop-filter: blur(5px) !important;
 }
 
 marquee {
   display: block !important;
-  width: 760px !important;
-  max-width: 94% !important;
-  margin: 6px auto !important;
-  padding: 3px !important;
-  background: #000080 !important;
-  color: #ffff00 !important;
-  border: 2px inset #aaa !important;
-  font: bold 13px "Courier New", monospace !important;
+  width: 900px !important;
+  max-width: 92% !important;
+  margin: 8px auto !important;
+  padding: 5px 9px !important;
+  background: linear-gradient(180deg, #3e9b67, #14643b) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,.8) !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.3), inset 0 1px rgba(255,255,255,.45) !important;
+  font: 600 13px "Segoe UI", Tahoma, sans-serif !important;
 }
 
 main,
@@ -186,76 +182,82 @@ section,
 .spec-card,
 .app-card,
 .legal-card {
-  border-radius: 0 !important;
+  border-radius: 8px !important;
 }
 
 section,
 .page-hero,
 .guide-hero,
 .pc-banner {
-  width: 760px !important;
-  max-width: 94% !important;
+  width: 900px !important;
+  max-width: 92% !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding: 16px !important;
-  background: #e8eee8 !important;
-  color: #001500 !important;
-  border: 4px ridge #bfbfbf !important;
-  box-shadow: 4px 4px 0 #555 !important;
+  padding: 18px !important;
+  background: linear-gradient(180deg, rgba(248,255,251,.93), rgba(220,240,228,.9)) !important;
+  color: #17251d !important;
+  border: 1px solid rgba(255,255,255,.98) !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,.27), inset 0 1px rgba(255,255,255,.98) !important;
+  backdrop-filter: blur(6px) !important;
 }
 
-section + section { margin-top: 10px !important; }
+section + section { margin-top: 12px !important; }
 
 section::before,
 section::after,
 .hero-glow,
 .hero-glow-2,
-.scroll-hint {
-  display: none !important;
-}
+.scroll-hint { display: none !important; }
 
 h1,
 h2,
 h3,
 h4 {
-  color: #003300 !important;
+  color: #17492e !important;
   background: transparent !important;
-  text-shadow: none !important;
-  font-family: "Times New Roman", Times, serif !important;
+  text-shadow: 0 1px 1px rgba(255,255,255,.9) !important;
+  font-family: "Segoe UI", Tahoma, sans-serif !important;
   letter-spacing: normal !important;
 }
 
 h1 {
-  margin: 4px 0 10px !important;
-  padding: 5px !important;
-  background: #006400 !important;
-  color: #ffff00 !important;
-  border: 3px ridge #ccffcc !important;
+  margin: 4px 0 12px !important;
+  padding: 9px 13px !important;
+  background: linear-gradient(180deg, #5ebd83, #25734a) !important;
+  color: #ffffff !important;
+  border: 1px solid #24623e !important;
+  border-radius: 7px !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.55), 0 2px 6px rgba(0,0,0,.22) !important;
   text-align: center !important;
-  font-size: 34px !important;
+  text-shadow: 0 1px 2px #164328 !important;
+  font-size: 32px !important;
 }
 
 h2 {
-  padding: 3px 6px !important;
-  margin: 8px 0 !important;
+  padding: 6px 10px !important;
+  margin: 10px 0 !important;
   color: #fff !important;
-  background: #006400 !important;
-  border: 2px outset #b7d7b7 !important;
-  font-size: 24px !important;
+  background: linear-gradient(180deg, #4eab72, #236c46) !important;
+  border: 1px solid #1c5838 !important;
+  border-radius: 6px !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.4), 0 1px 4px rgba(0,0,0,.2) !important;
+  font-size: 23px !important;
+  text-shadow: 0 1px 2px #164328 !important;
 }
 
-h3 { font-size: 20px !important; }
+h3 { font-size: 19px !important; }
 
 .hero-tag,
 .section-label {
   display: inline-block !important;
-  padding: 2px 7px !important;
-  margin-bottom: 5px !important;
-  background: #ffff00 !important;
-  color: #000 !important;
-  border: 2px solid #000 !important;
-  border-radius: 0 !important;
-  font: bold 11px Arial, sans-serif !important;
+  padding: 3px 9px !important;
+  margin-bottom: 6px !important;
+  background: linear-gradient(180deg, #e6ffe9, #acd8b8) !important;
+  color: #1b5935 !important;
+  border: 1px solid #7ba88a !important;
+  border-radius: 5px !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.9), 0 1px 3px rgba(0,0,0,.16) !important;
+  font: 600 11px "Segoe UI", Tahoma, sans-serif !important;
 }
 
 .hero-sub,
@@ -263,11 +265,11 @@ p,
 li,
 .game-desc,
 .stat-label {
-  font-family: "Times New Roman", Times, serif !important;
-  color: #001500 !important;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif !important;
+  color: #17251d !important;
 }
 
-.hero-sub { font-size: 17px !important; }
+.hero-sub { font-size: 16px !important; }
 
 button,
 .btn,
@@ -279,16 +281,16 @@ button,
 .download-btn,
 .action-btn {
   display: inline-block !important;
-  padding: 4px 12px !important;
+  padding: 5px 14px !important;
   margin: 3px !important;
-  border: 3px outset #ffffff !important;
-  border-radius: 0 !important;
-  background: linear-gradient(#fff, #ddd 48%, #aaa 50%, #eee) !important;
-  color: #000 !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-  text-decoration: underline !important;
-  font: bold 12px Arial, sans-serif !important;
+  border: 1px solid #7e9f8a !important;
+  border-radius: 5px !important;
+  background: linear-gradient(180deg, #ffffff, #e4f0e8 48%, #c3dccb 52%, #f7fcf9) !important;
+  color: #173c28 !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.98), 0 1px 3px rgba(0,0,0,.22) !important;
+  text-shadow: 0 1px rgba(255,255,255,.9) !important;
+  text-decoration: none !important;
+  font: 600 12px "Segoe UI", Tahoma, sans-serif !important;
   cursor: pointer !important;
 }
 
@@ -302,7 +304,9 @@ button:hover,
 .download-btn:hover,
 .action-btn:hover {
   color: #fff !important;
-  background: #000080 !important;
+  background: linear-gradient(180deg, #73c795, #2e8056) !important;
+  border-color: #246640 !important;
+  text-shadow: 0 1px 2px #17452c !important;
 }
 
 button:active,
@@ -314,7 +318,7 @@ button:active,
 .email-block a:active,
 .download-btn:active,
 .action-btn:active {
-  border-style: inset !important;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.25) !important;
 }
 
 .project-card,
@@ -330,11 +334,11 @@ button:active,
 .panel,
 .content-card,
 .info-card {
-  background: #d9e5d9 !important;
-  color: #000 !important;
-  border: 3px ridge #aaa !important;
-  box-shadow: 2px 2px 0 #555 !important;
-  border-radius: 0 !important;
+  background: linear-gradient(180deg, rgba(247,255,250,.9), rgba(209,232,217,.88)) !important;
+  color: #17251d !important;
+  border: 1px solid rgba(255,255,255,.95) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2), inset 0 1px rgba(255,255,255,.9) !important;
+  border-radius: 7px !important;
 }
 
 .project-card:hover,
@@ -346,8 +350,9 @@ button:active,
 .spec-card:hover,
 .altcore-card:hover,
 .app-card:hover {
-  background: #ffffcc !important;
-  transform: none !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(226,248,234,.95)) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25), 0 0 6px rgba(71,158,103,.3) !important;
 }
 
 .game-icon { filter: none !important; }
@@ -355,28 +360,33 @@ button:active,
 table {
   width: 100% !important;
   border-collapse: separate !important;
-  border-spacing: 2px !important;
-  background: #808080 !important;
-  border: 4px ridge #c0c0c0 !important;
-  border-radius: 0 !important;
+  border-spacing: 0 !important;
+  overflow: hidden !important;
+  background: rgba(225,242,231,.8) !important;
+  border: 1px solid #91b49e !important;
+  border-radius: 7px !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.18) !important;
 }
 
 th {
-  padding: 5px !important;
-  background: #006400 !important;
+  padding: 6px !important;
+  background: linear-gradient(180deg, #59b87d, #2b764e) !important;
   color: #fff !important;
-  border: 2px outset #9acd32 !important;
-  font: bold 13px Arial, sans-serif !important;
+  border: 0 !important;
+  border-bottom: 1px solid #205d3c !important;
+  font: 600 13px "Segoe UI", Tahoma, sans-serif !important;
+  text-shadow: 0 1px 2px #164328 !important;
 }
 
 td {
-  padding: 4px !important;
-  background: #f2f2f2 !important;
-  color: #000 !important;
-  border: 1px solid #888 !important;
+  padding: 5px !important;
+  background: rgba(255,255,255,.82) !important;
+  color: #17251d !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(105,143,118,.3) !important;
 }
 
-tr:nth-child(even) td { background: #dfeadf !important; }
+tr:nth-child(even) td { background: rgba(222,240,228,.86) !important; }
 
 .badge,
 .tag,
@@ -385,66 +395,71 @@ tr:nth-child(even) td { background: #dfeadf !important; }
 .os-badge,
 .classified-badge {
   display: inline-block !important;
-  padding: 2px 5px !important;
+  padding: 3px 7px !important;
   margin: 2px !important;
-  border-radius: 0 !important;
-  border: 2px outset #fff !important;
-  background: #006400 !important;
-  color: #ffff00 !important;
-  font: bold 11px "Courier New", monospace !important;
-  box-shadow: none !important;
+  border-radius: 4px !important;
+  border: 1px solid #78a88a !important;
+  background: linear-gradient(180deg, #e7fff0, #acd6b8) !important;
+  color: #1b5735 !important;
+  font: 600 11px "Segoe UI", Tahoma, sans-serif !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.9), 0 1px 2px rgba(0,0,0,.15) !important;
 }
 
 input,
 textarea,
 select {
-  border: 2px inset #aaa !important;
-  border-radius: 0 !important;
-  background: #fff !important;
-  color: #000 !important;
-  font: 13px Arial, sans-serif !important;
+  border: 1px solid #8eab98 !important;
+  border-radius: 4px !important;
+  background: rgba(255,255,255,.94) !important;
+  color: #17251d !important;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.12), 0 1px rgba(255,255,255,.9) !important;
+  font: 13px "Segoe UI", Tahoma, sans-serif !important;
 }
 
 hr {
-  height: 4px !important;
-  border: 2px inset #999 !important;
-  background: #006400 !important;
+  height: 2px !important;
+  border: 0 !important;
+  background: linear-gradient(90deg, transparent, #68a57e, transparent) !important;
 }
 
 img,
-video { border-radius: 0 !important; }
+video { border-radius: 5px !important; }
 
 footer {
-  width: 760px !important;
-  max-width: 94% !important;
-  margin: 10px auto !important;
-  padding: 7px !important;
-  background: #003300 !important;
-  color: #ccffcc !important;
-  border: 3px ridge #9acd32 !important;
+  width: 900px !important;
+  max-width: 92% !important;
+  margin: 12px auto !important;
+  padding: 9px !important;
+  background: linear-gradient(180deg, rgba(35,103,65,.96), rgba(8,54,31,.98)) !important;
+  color: #dff5e7 !important;
+  border: 1px solid rgba(255,255,255,.75) !important;
+  border-radius: 7px !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,.3), inset 0 1px rgba(255,255,255,.25) !important;
   text-align: center !important;
-  font: 12px Arial, sans-serif !important;
+  font: 12px "Segoe UI", Tahoma, sans-serif !important;
 }
 
 footer span { margin: 0 7px !important; }
-footer a { color: #ffff00 !important; }
+footer a { color: #b9ffd0 !important; }
 
 .altcore-page {
-  width: 760px !important;
-  max-width: 94% !important;
-  margin: 10px auto !important;
-  padding: 16px !important;
-  background: #e8eee8 !important;
-  border: 4px ridge #aaa !important;
-  box-shadow: 4px 4px #555 !important;
+  width: 900px !important;
+  max-width: 92% !important;
+  margin: 12px auto !important;
+  padding: 18px !important;
+  background: linear-gradient(180deg, rgba(248,255,251,.94), rgba(215,237,222,.9)) !important;
+  border: 1px solid rgba(255,255,255,.98) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,.27), inset 0 1px rgba(255,255,255,.98) !important;
 }
 
 .altcore-logo { filter: none !important; }
 .altcore-notice {
-  border-radius: 0 !important;
-  border: 3px ridge #ffff00 !important;
-  background: #ffffcc !important;
-  color: #000 !important;
+  border-radius: 6px !important;
+  border: 1px solid #b9a85b !important;
+  background: rgba(255,250,203,.86) !important;
+  color: #423d1b !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15), inset 0 1px rgba(255,255,255,.9) !important;
 }
 
 @media (max-width: 700px) {
@@ -455,5 +470,5 @@ footer a { color: #ffff00 !important; }
 
   .nav-logo, .topnav .brand { font-size: 23px !important; }
   h1 { font-size: 27px !important; }
-  .nav-links a { padding: 3px 5px !important; }
+  .nav-links a { padding: 4px 7px !important; }
 }
