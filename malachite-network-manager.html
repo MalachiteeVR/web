@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#3dffa0" />
+  <meta name="description" content="MalachiteVR Network Manager v0.2.0, a Windows-first Rust network management utility." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MalachiteVR" />
+  <meta property="og:title" content="MalachiteVR Network Manager v0.2.0" />
+  <meta property="og:description" content="A Windows-first Rust desktop network manager for adapters, TCP connections, Windows Firewall, and UPnP port mappings." />
+  <title>MalachiteVR Network Manager v0.2.0</title>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    .release-page{max-width:1100px;margin:0 auto;padding:55px 24px 95px}
+    .release-kicker{color:#aaffaa;font:12px "Courier New",monospace;letter-spacing:.16em;margin-bottom:12px}
+    .release-page h1{font-size:clamp(38px,7vw,72px);line-height:1.02;margin:0 0 18px;color:#fff;text-shadow:3px 3px #000}
+    .release-page h1 span{color:var(--green)}
+    .release-lead{max-width:800px;color:#d8ffd8;font-size:19px;line-height:1.7;margin:0 0 28px}
+    .release-actions{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 45px}
+    .release-actions .btn{min-width:190px;text-align:center}
+    .release-banner{border:2px ridge var(--green);background:#001800;padding:24px;box-shadow:5px 5px #000;margin-bottom:34px}
+    .release-banner strong{color:#ffff66}
+    .release-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:0 0 36px}
+    .release-card{background:#001800;border:2px ridge #44cc44;padding:22px;box-shadow:4px 4px #000}
+    .release-card h2{color:#ffff00;font-size:20px;margin:0 0 12px}
+    .release-card p{color:#d8ffd8;line-height:1.65;margin:0}
+    .feature-list{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;padding:0;margin:0;list-style:none}
+    .feature-list li{border-left:3px solid var(--green);background:rgba(0,255,102,.05);padding:11px 13px;color:#d8ffd8}
+    .code-box{background:#050805;border:1px solid #276b43;padding:15px 18px;color:#b8ffcf;font:14px/1.6 "Courier New",monospace;overflow:auto;margin-top:16px}
+    .release-note{background:#ffffcc;color:#000;border:2px solid #006600;padding:14px 16px;margin-top:30px}
+    .release-note a{color:#064b16}
+    .release-footer{margin-top:40px;text-align:center;color:#9dbaaa;font-size:13px}
+    @media(max-width:750px){.release-grid,.feature-list{grid-template-columns:1fr}.release-page{padding-top:35px}}
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">MALACHITEVR</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="pcbuilds.html">PC Builds</a></li>
+      <li><a href="mypc.html">My PC</a></li>
+      <li><a href="my-current-work.html">Projects</a></li>
+      <li><a href="altcore.html">Altcore</a></li>
+      <li><a href="malachite-times.html">The Malachite Times</a></li>
+    </ul>
+  </nav>
+
+  <main class="release-page">
+    <div class="release-kicker">MALACHITEEVR · SOFTWARE RELEASE · WINDOWS</div>
+    <h1>MalachiteVR <span>Network Manager</span></h1>
+    <p class="release-lead">A Windows-first desktop network manager built in Rust. Manage adapters, inspect TCP connections, work with Windows Defender Firewall, and discover and configure UPnP port mappings from one native-feeling interface.</p>
+
+    <div class="release-actions">
+      <a class="btn btn-primary" href="https://github.com/MalachiteeVR/MalachiteVR-Network-Manager/releases">Download / Releases</a>
+      <a class="btn btn-ghost" href="https://github.com/MalachiteeVR/MalachiteVR-Network-Manager">View Source</a>
+    </div>
+
+    <div class="release-banner">
+      <strong>v0.2.0 is the current release line.</strong><br />
+      The project is open source and currently targets Windows. The application uses Rust for its native shell and Microsoft Edge WebView2 for its interface.
+    </div>
+
+    <div class="release-grid">
+      <article class="release-card">
+        <h2>Network adapters</h2>
+        <ul class="feature-list">
+          <li>Native Windows adapter enumeration</li>
+          <li>Link speed and operational status</li>
+          <li>MAC address display</li>
+          <li>Enable or disable adapters</li>
+        </ul>
+      </article>
+      <article class="release-card">
+        <h2>Connections &amp; addressing</h2>
+        <ul class="feature-list">
+          <li>Current TCP connection viewer</li>
+          <li>Local and remote IPv4 endpoints</li>
+          <li>Connection state and owning PID</li>
+          <li>Private IPv4 detection</li>
+        </ul>
+      </article>
+      <article class="release-card">
+        <h2>Windows Firewall</h2>
+        <ul class="feature-list">
+          <li>List Windows Defender Firewall rules</li>
+          <li>Create firewall rules</li>
+          <li>Remove firewall rules</li>
+          <li>Native Windows Firewall COM API</li>
+        </ul>
+      </article>
+      <article class="release-card">
+        <h2>UPnP port mapping</h2>
+        <ul class="feature-list">
+          <li>SSDP Internet Gateway discovery</li>
+          <li>Inspect existing port mappings</li>
+          <li>Add TCP and UDP mappings</li>
+          <li>Maps to the detected private IPv4 address</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="release-card">
+      <h2>Built with native Windows APIs</h2>
+      <p>Network and firewall operations are implemented through Windows APIs rather than spawning PowerShell commands. Work is performed asynchronously so discovery and firewall enumeration do not freeze the WebView interface.</p>
+      <div class="code-box">Rust · Windows IP Helper API · Windows Firewall COM · SSDP / UPnP · Wry · Microsoft Edge WebView2</div>
+    </div>
+
+    <div class="release-note">
+      <strong>Requirements:</strong> Windows with a supported Microsoft Edge WebView2 Runtime installation. Administrator privileges are requested because adapter and firewall changes require elevation. See the project's README for build instructions and security notes.
+    </div>
+
+    <div class="release-footer">
+      <p><a href="https://github.com/MalachiteeVR/MalachiteVR-Network-Manager">Source code</a> · <a href="https://github.com/MalachiteeVR/MalachiteVR-Network-Manager/releases">Releases</a> · <a href="index.html">MalachiteVR home</a></p>
+      <p>&copy; 2026 MalachiteVR</p>
+    </div>
+  </main>
+
+  <footer><span>&copy; 2026 MalachiteVR</span><span>malachitevr.win</span><span><a href="https://ko-fi.com/malachitevr" target="_blank" rel="noopener noreferrer">Support MalachiteVR on Ko-fi</a></span></footer>
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('malachitevr', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#5cb85c',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
+</body>
+</html>
