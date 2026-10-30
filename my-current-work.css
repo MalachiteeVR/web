@@ -1,6 +1,6 @@
 /* My Current Work page layout
-   Vista Aero surfaces are provided by retro-2000s.css.
-   This file only contains page-specific layout and component geometry. */
+   Vista Aero surfaces are intentionally translucent. The global Aero palette,
+   typography, navigation and shared controls live in retro-2000s.css. */
 
 html {
   scroll-behavior: smooth;
@@ -15,6 +15,16 @@ main {
   margin-top: 12px;
   padding: 22px;
   text-align: center;
+  color: #173226;
+  background: linear-gradient(135deg, rgba(255,255,255,.42), rgba(219,248,232,.16));
+  border: 1px solid rgba(255,255,255,.82);
+  border-radius: 10px;
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.32),
+    inset 0 1px rgba(255,255,255,.92),
+    inset 0 -1px rgba(0,55,35,.12);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
 }
 
 .hero p {
@@ -32,6 +42,29 @@ main {
   position: relative;
   min-width: 0;
   padding: 14px;
+  color: #173226;
+  background: linear-gradient(135deg, rgba(255,255,255,.46), rgba(214,244,225,.18));
+  border: 1px solid rgba(255,255,255,.78);
+  border-radius: 9px;
+  box-shadow:
+    0 4px 13px rgba(0,0,0,.28),
+    inset 0 1px rgba(255,255,255,.82);
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+}
+
+.work-card:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,.56), rgba(209,240,229,.25));
+  box-shadow:
+    0 7px 18px rgba(0,0,0,.32),
+    0 0 12px rgba(117,221,255,.20),
+    inset 0 1px rgba(255,255,255,.92);
+  transform: translateY(-1px);
+}
+
+.work-card.featured {
+  border-color: rgba(235,255,170,.92);
 }
 
 .work-card h3 {
@@ -40,15 +73,28 @@ main {
 
 .number {
   display: inline-block;
+  color: #356d42;
   font-weight: 700;
 }
 
 .status {
   float: right;
   padding: 2px 7px;
+  color: #16482d;
+  background: rgba(236,255,244,.72);
+  border: 1px solid rgba(255,255,255,.88);
   border-radius: 4px;
+  box-shadow: inset 0 1px rgba(255,255,255,.85), 0 1px 3px rgba(0,0,0,.18);
   font-size: 10px;
   font-weight: 700;
+}
+
+.status.planning {
+  background: rgba(255,255,180,.72);
+}
+
+.status.experiment {
+  background: rgba(178,231,255,.72);
 }
 
 .description {
@@ -68,19 +114,37 @@ main {
   display: inline-block;
   margin: 2px 4px 2px 0;
   padding: 2px 7px;
+  color: #194b32;
+  background: rgba(224,249,235,.46);
+  border: 1px solid rgba(255,255,255,.70);
   border-radius: 4px;
+  box-shadow: inset 0 1px rgba(255,255,255,.65), 0 1px 2px rgba(0,0,0,.14);
   font-size: 11px;
 }
 
 .note {
   padding: 10px;
   margin-top: 10px;
+  color: #173226;
+  background: rgba(255,255,220,.46);
+  border: 1px solid rgba(255,255,255,.82);
+  border-radius: 7px;
+  box-shadow: inset 0 1px rgba(255,255,255,.82), 0 3px 9px rgba(0,0,0,.20);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 footer {
   width: min(960px, 94%);
   margin: 14px auto 0;
   padding: 10px;
+  color: #28543b;
+  background: rgba(235,250,244,.30);
+  border: 1px solid rgba(255,255,255,.70);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 @media (max-width: 700px) {
