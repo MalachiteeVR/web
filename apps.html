@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#3dffa0" />
+  <meta name="description" content="Released applications by MalachiteeVR." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="MalachiteVR" />
+  <meta property="og:title" content="Released Apps — MalachiteVR" />
+  <meta property="og:description" content="Download and explore applications released by MalachiteeVR." />
+  <meta property="og:url" content="https://malachitevr.win/apps.html" />
+  <title>Released Apps — MalachiteVR</title>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    .apps-hero { max-width:1100px; margin:0 auto; padding:42px 22px 24px; text-align:center; }
+    .apps-hero h1 { margin-bottom:10px; }
+    .apps-hero p { max-width:760px; margin:0 auto; color:var(--muted); font-size:17px; }
+    .apps-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px; }
+    .app-card { background:linear-gradient(135deg,#064f21,#002b10); border:3px ridge #37e873; padding:20px; box-shadow:3px 3px #000; }
+    .app-card h2 { margin:0 0 6px; font-size:30px; }
+    .app-card .version { display:inline-block; color:#000; background:var(--lime); border:2px outset #fff; padding:2px 7px; font:bold 12px "Courier New",monospace; margin-bottom:12px; }
+    .app-card p { color:var(--text); min-height:70px; }
+    .app-meta { color:var(--muted); font-size:13px; margin:12px 0 16px; }
+    .app-actions { display:flex; flex-wrap:wrap; gap:8px; }
+    .app-actions a { text-decoration:none; }
+    .download { background:linear-gradient(#d8ff6b,#8fd000 48%,#578000); }
+    .coming-soon { opacity:.72; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="nav-logo" href="index.html">MALACHITEVR</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#games">Games</a></li>
+      <li><a href="pcbuilds.html">PC Builds</a></li>
+      <li><a href="mypc.html">My PC</a></li>
+      <li><a href="minecraft.html">Minecraft Server</a></li>
+      <li><a href="my-current-work.html">Projects</a></li>
+      <li><a class="active" href="apps.html">Released Apps</a></li>
+      <li><a href="minecraft_relay_guide.html">Relay Guide</a></li>
+      <li><a href="altcore.html">Altcore</a></li>
+    </ul>
+  </nav>
+
+  <div class="wip-bar" style="max-width:1100px;margin:0 auto;">&#9888; This website is a work in progress. Some info may not be correct.</div>
+  <marquee behavior="scroll" direction="left" scrollamount="5" style="max-width:1100px;margin:8px auto;color:#ccff00;font:bold 12px Courier New;display:block;">*** MALACHITEVR SOFTWARE ARCHIVE *** RELEASED APPS • DOWNLOADS • BUILDS ***</marquee>
+
+  <header class="apps-hero">
+    <div class="hero-tag">Software archive · malachitevr.win</div>
+    <h1>Released <span style="color:#ffff00;">apps.</span></h1>
+    <p>Standalone applications released under MalachiteeVR. Grab the latest build, check the source, and see what each tool is designed to do.</p>
+  </header>
+
+  <section>
+    <div class="section-label">Released software</div>
+    <div class="apps-grid">
+      <article class="app-card">
+        <span class="version">v1.0 · RELEASED</span>
+        <h2>MalachiteVR Network Manager</h2>
+        <p>A Windows network management utility built in Rust for inspecting and working with network configuration and connectivity.</p>
+        <div class="app-meta">Platform: Windows · Language: Rust · First public release: October 2026</div>
+        <div class="app-actions">
+          <a class="btn download" href="https://github.com/MalachiteeVR/MalachiteVR-Network-Manager/releases/download/First/malachite-network-manager.exe">Download v1.0</a>
+          <a class="btn" href="https://github.com/MalachiteeVR/MalachiteVR-Network-Manager/releases/tag/First">Release page</a>
+          <a class="btn" href="https://github.com/MalachiteeVR/MalachiteVR-Network-Manager">Source</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Coming next</div>
+    <div class="app-card coming-soon">
+      <span class="version">IN DEVELOPMENT</span>
+      <h2>MalachiteVR GameFix</h2>
+      <p>A Windows gaming diagnostics and troubleshooting utility designed to figure out <em>why</em> a game is running poorly instead of pretending a magic "FPS boost" button exists.</p>
+      <div class="app-meta">CPU/GPU/RAM telemetry · bottleneck detection · network diagnostics · performance history · safe reversible fixes</div>
+      <div class="app-actions">
+        <a class="btn" href="https://github.com/MalachiteeVR/MalachiteVR-GameFix">View project</a>
+      </div>
+    </div>
+  </section>
+
+  <footer><span>MalachiteeVR — software archive</span><a href="index.html">Return to portfolio</a><span><a href="https://ko-fi.com/malachitevr" target="_blank" rel="noopener noreferrer">Support MalachiteVR on Ko-fi</a></span></footer>
+<script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+<script>
+  kofiWidgetOverlay.draw('malachitevr', {
+    'type': 'floating-chat',
+    'floating-chat.donateButton.text': 'Support me',
+    'floating-chat.donateButton.background-color': '#5cb85c',
+    'floating-chat.donateButton.text-color': '#fff'
+  });
+</script>
+</body>
+</html>
