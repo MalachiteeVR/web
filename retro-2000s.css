@@ -1,0 +1,428 @@
+/*
+ * MalachiteVR 2000s Web Theme
+ * A deliberate early-2000s personal-tech / GeoCities-inspired skin.
+ * The content and functionality stay modern. The furniture does not.
+ */
+
+:root {
+  --retro-green: #00cc44;
+  --retro-lime: #ccff00;
+  --retro-dark: #001400;
+  --retro-panel: #003d00;
+  --retro-panel-2: #005500;
+  --retro-yellow: #ffff66;
+  --retro-blue: #66ccff;
+  --retro-silver: #c0c0c0;
+  --retro-white: #ffffff;
+}
+
+html {
+  background: #001000 !important;
+}
+
+body {
+  color: #d8ffd8 !important;
+  background-color: #001400 !important;
+  background-image:
+    radial-gradient(circle at 2px 2px, rgba(0, 255, 80, .12) 1px, transparent 1px),
+    linear-gradient(#002b00 1px, transparent 1px),
+    linear-gradient(90deg, #002b00 1px, transparent 1px) !important;
+  background-size: 9px 9px, 18px 18px, 18px 18px !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+body::before {
+  content: "WELCOME TO MALACHITEVR • PERSONAL WEB • EST. 2026" !important;
+  display: block !important;
+  height: auto !important;
+  padding: 3px 8px !important;
+  box-sizing: border-box !important;
+  background: #004d00 !important;
+  color: #ffff66 !important;
+  border: 0 !important;
+  border-bottom: 2px ridge #66ff66 !important;
+  text-align: center !important;
+  font: bold 11px "Courier New", monospace !important;
+  letter-spacing: 1px !important;
+}
+
+body::after {
+  content: "Best viewed on a desktop • 2000s Web Edition • Thanks for visiting!" !important;
+  display: block !important;
+  width: 900px !important;
+  max-width: 94% !important;
+  margin: 18px auto 30px !important;
+  padding: 7px !important;
+  box-sizing: border-box !important;
+  color: #9cff9c !important;
+  background: #001d00 !important;
+  border: 2px ridge #329932 !important;
+  text-align: center !important;
+  font: 11px "Courier New", monospace !important;
+}
+
+a {
+  color: var(--retro-blue) !important;
+  text-decoration: underline !important;
+}
+
+a:hover {
+  color: var(--retro-yellow) !important;
+}
+
+/* Main site navigation */
+nav,
+.topnav {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  z-index: 50 !important;
+  width: 900px !important;
+  max-width: 94% !important;
+  margin: 10px auto 8px !important;
+  padding: 7px !important;
+  min-height: 0 !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 8px !important;
+  background: linear-gradient(#087b32 0%, #006000 48%, #003000 49%, #005500 100%) !important;
+  border: 3px ridge #9aff9a !important;
+  box-shadow: 4px 4px 0 #000 !important;
+  border-radius: 0 !important;
+}
+
+.nav-logo,
+.topnav .brand {
+  color: #fff !important;
+  text-decoration: none !important;
+  text-shadow: 2px 2px #000 !important;
+  font: bold 23px "Courier New", monospace !important;
+  letter-spacing: -1px !important;
+  white-space: nowrap !important;
+}
+
+.nav-links,
+.topnav {
+  list-style: none !important;
+}
+
+.nav-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 3px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.nav-links a,
+.topnav > a:not(.brand):not(.back-btn) {
+  display: block !important;
+  padding: 4px 8px !important;
+  min-width: 64px !important;
+  box-sizing: border-box !important;
+  color: #000 !important;
+  background: linear-gradient(#f4fff4, #b7e5b7 48%, #67a867) !important;
+  border: 2px outset #fff !important;
+  border-radius: 0 !important;
+  box-shadow: 1px 1px #000 !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  font: bold 10px Arial, sans-serif !important;
+}
+
+.nav-links a:hover,
+.nav-links a.active,
+.topnav > a:not(.brand):not(.back-btn):hover {
+  color: #000 !important;
+  background: #ffff66 !important;
+  border-style: inset !important;
+}
+
+/* Old-school warning / announcement bars */
+.wip-bar,
+.wip-banner {
+  width: 900px !important;
+  max-width: 94% !important;
+  box-sizing: border-box !important;
+  margin: 0 auto 10px !important;
+  padding: 5px 8px !important;
+  background: #ffffcc !important;
+  color: #000 !important;
+  border: 2px solid #006600 !important;
+  font: 12px "Times New Roman", serif !important;
+  text-align: center !important;
+  border-radius: 0 !important;
+}
+
+/* Common content frames */
+main,
+section,
+.page-hero,
+.guide-hero,
+.pc-banner,
+.card,
+.cta-box,
+.altcore-card,
+.app-card,
+.legal-card,
+.panel,
+.content-card,
+.info-card,
+.project-card,
+.game-card,
+.tier-card,
+.step,
+.offering-card,
+.usecase-card,
+.spec-card {
+  border-radius: 0 !important;
+}
+
+section,
+.page-hero,
+.guide-hero,
+.pc-banner,
+.card,
+.cta-box,
+.panel,
+.content-card,
+.info-card,
+.project-card,
+.game-card,
+.tier-card,
+.step,
+.offering-card,
+.usecase-card,
+.spec-card {
+  background: #003900 !important;
+  border: 3px ridge #4dcc4d !important;
+  box-shadow: 4px 4px #000 !important;
+}
+
+section,
+.page-hero,
+.guide-hero,
+.pc-banner {
+  width: 900px !important;
+  max-width: 94% !important;
+  box-sizing: border-box !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #fff !important;
+  font-family: "Times New Roman", Georgia, serif !important;
+  text-shadow: 2px 2px #000 !important;
+  letter-spacing: 0 !important;
+}
+
+h1 {
+  text-decoration: none !important;
+}
+
+h2 {
+  border-bottom: 2px solid #00aa33 !important;
+  padding-bottom: 4px !important;
+}
+
+/* Beveled buttons */
+button,
+.btn,
+.btn-primary,
+.btn-ghost,
+.back-btn,
+.email-block a,
+.download-btn,
+.action-btn {
+  border-radius: 0 !important;
+  border: 3px outset #ffffdd !important;
+  background: linear-gradient(#ffffcc, #d7d75c 50%, #999900) !important;
+  color: #000 !important;
+  box-shadow: 2px 2px #000 !important;
+  text-shadow: none !important;
+  text-decoration: none !important;
+}
+
+button:hover,
+.btn:hover,
+.btn-primary:hover,
+.btn-ghost:hover,
+.back-btn:hover,
+.email-block a:hover,
+.download-btn:hover,
+.action-btn:hover {
+  background: #ffff66 !important;
+  color: #000 !important;
+}
+
+button:active,
+.btn:active,
+.btn-primary:active,
+.btn-ghost:active,
+.back-btn:active,
+.email-block a:active,
+.download-btn:active,
+.action-btn:active {
+  border-style: inset !important;
+  box-shadow: none !important;
+}
+
+/* Old web badges */
+.badge,
+.tag,
+.hero-tag,
+.section-label,
+.featured-badge,
+.skill-item,
+.os-badge,
+.classified-badge {
+  border-radius: 0 !important;
+  border: 2px outset #baffba !important;
+  background: #00aa33 !important;
+  color: #ffff66 !important;
+  font-family: "Courier New", monospace !important;
+  box-shadow: 1px 1px #000 !important;
+}
+
+/* Make cards look like nested HTML-table panels rather than modern UI cards */
+.project-card,
+.game-card,
+.tier-card,
+.step,
+.offering-card,
+.usecase-card,
+.spec-card,
+.altcore-card,
+.app-card {
+  background: #002b00 !important;
+  border: 2px ridge #4dcc4d !important;
+  box-shadow: 2px 2px #000 !important;
+  border-radius: 0 !important;
+}
+
+.project-card:hover,
+.game-card:hover,
+.tier-card:hover,
+.step:hover,
+.offering-card:hover,
+.usecase-card:hover,
+.spec-card:hover,
+.altcore-card:hover,
+.app-card:hover {
+  background: #005500 !important;
+}
+
+/* Tables were the original responsive framework */
+table {
+  border-radius: 0 !important;
+  border: 3px ridge #66ff66 !important;
+  background: #001800 !important;
+}
+
+th {
+  background: #006600 !important;
+  color: #fff !important;
+  border: 1px solid #00aa33 !important;
+}
+
+td {
+  border: 1px solid #008833 !important;
+}
+
+tr:nth-child(even) {
+  background: #003000 !important;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  border: 2px inset #b7b7b7 !important;
+  border-radius: 0 !important;
+  background: #fff !important;
+  color: #000 !important;
+}
+
+/* Altcore-specific overrides */
+.altcore-page {
+  width: 900px !important;
+  max-width: 94% !important;
+  box-sizing: border-box !important;
+  margin: 12px auto !important;
+  padding: 22px !important;
+  background: #003900 !important;
+  border: 3px ridge #4dcc4d !important;
+  box-shadow: 5px 5px #000 !important;
+}
+
+.altcore-logo {
+  filter: drop-shadow(3px 3px 0 #000) !important;
+}
+
+.altcore-actions .btn,
+.altcore-actions .btn-primary,
+.altcore-actions .btn-ghost {
+  min-width: 150px !important;
+}
+
+.altcore-notice {
+  border-radius: 0 !important;
+  border: 3px ridge #ffff66 !important;
+  background: #ffffcc !important;
+  color: #000 !important;
+}
+
+/* About-me page */
+.topnav .back-btn {
+  color: #000 !important;
+  background: linear-gradient(#ffffcc, #cccc55) !important;
+  border: 3px outset #ffffdd !important;
+  border-radius: 0 !important;
+}
+
+.wrap .card {
+  border-radius: 0 !important;
+  background: #003900 !important;
+  border: 3px ridge #4dcc4d !important;
+  box-shadow: 5px 5px #000 !important;
+}
+
+/* Keep existing animated/retro elements from becoming sleek */
+img,
+video {
+  border-radius: 0 !important;
+}
+
+hr {
+  border: 0 !important;
+  border-top: 2px ridge #66ff66 !important;
+}
+
+@media (max-width: 700px) {
+  nav,
+  .topnav {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .nav-logo,
+  .topnav .brand {
+    text-align: center !important;
+  }
+
+  .nav-links {
+    justify-content: center !important;
+  }
+
+  body::after {
+    width: 94% !important;
+  }
+}
