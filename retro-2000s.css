@@ -1,164 +1,170 @@
-/* MALACHITEEVR - WINDOWS VISTA / AERO EDITION
-   Vista-inspired glass, gradients, soft shadows and Segoe UI.
-   Keeps the site's Malachite green identity while borrowing Vista-era UI cues.
-*/
+/* MalachiteeVR Vista Aero theme */
 
-* { box-sizing: border-box !important; }
+:root {
+  --aero-green: #2f8f5b;
+  --aero-green-dark: #145b37;
+  --aero-blue: #4f9fc4;
+  --glass-white: rgba(255, 255, 255, 0.58);
+  --glass-light: rgba(235, 250, 244, 0.42);
+  --glass-dark: rgba(20, 70, 48, 0.32);
+  --glass-border: rgba(255, 255, 255, 0.82);
+  --glass-shadow: rgba(0, 0, 0, 0.42);
+  --text: #173226;
+}
 
-html, body { min-height: 100% !important; }
+* {
+  box-sizing: border-box !important;
+}
 
 html {
-  background: #071b12 !important;
+  min-height: 100%;
+  background: #092d35 !important;
 }
 
 body {
+  min-height: 100vh !important;
   margin: 0 !important;
-  padding: 0 0 36px !important;
-  color: #17251d !important;
-  background:
-    radial-gradient(circle at 50% -10%, rgba(255,255,255,.9), transparent 32%),
-    linear-gradient(180deg, #dceee5 0%, #b8d6c5 38%, #89b39b 100%) !important;
+  padding: 0 0 42px !important;
+  color: var(--text) !important;
   font-family: "Segoe UI", Tahoma, Arial, sans-serif !important;
   font-size: 15px !important;
   line-height: 1.45 !important;
+  background:
+    radial-gradient(ellipse at 15% 82%, rgba(221, 255, 122, 0.72) 0%, rgba(139, 216, 72, 0.32) 24%, transparent 48%),
+    radial-gradient(ellipse at 88% 18%, rgba(53, 210, 220, 0.66) 0%, rgba(26, 143, 169, 0.34) 28%, transparent 56%),
+    radial-gradient(ellipse at 52% 110%, rgba(74, 177, 224, 0.56) 0%, transparent 43%),
+    linear-gradient(155deg, #0b5965 0%, #157d91 31%, #3b9d91 57%, #87bd5b 78%, #d4e46f 100%) !important;
+  background-attachment: fixed !important;
+  overflow-x: hidden !important;
 }
 
 body::before {
-  content: "MALACHITEEVR.WIN" !important;
-  display: block !important;
-  width: 100% !important;
-  padding: 8px 14px !important;
-  margin: 0 !important;
-  color: #ffffff !important;
-  background: linear-gradient(180deg, rgba(18,91,53,.96), rgba(4,48,27,.97)) !important;
-  border-bottom: 1px solid rgba(255,255,255,.65) !important;
-  box-shadow: 0 2px 9px rgba(0,0,0,.35) !important;
-  text-align: center !important;
-  text-shadow: 0 1px 2px #000 !important;
-  font: 600 14px "Segoe UI", Tahoma, sans-serif !important;
-  letter-spacing: 2px !important;
+  content: "" !important;
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(124deg, transparent 0 28%, rgba(255,255,255,.18) 29%, transparent 31%),
+    linear-gradient(147deg, transparent 0 61%, rgba(255,255,255,.14) 62%, transparent 64%),
+    radial-gradient(ellipse at 48% 44%, rgba(255,255,255,.16), transparent 36%) !important;
 }
 
 body::after {
-  content: "MalachiteeVR  •  Personal Web Site  •  Best viewed with Aero" !important;
-  display: block !important;
-  width: 900px !important;
-  max-width: 92% !important;
-  margin: 14px auto 0 !important;
-  padding: 7px 12px !important;
-  color: #31543f !important;
-  background: rgba(240,255,247,.72) !important;
-  border: 1px solid rgba(255,255,255,.95) !important;
-  border-radius: 7px !important;
-  box-shadow: 0 1px 4px rgba(0,0,0,.22), inset 0 1px rgba(255,255,255,.9) !important;
-  text-align: center !important;
-  font: 12px "Segoe UI", Tahoma, sans-serif !important;
+  content: "" !important;
+  display: none !important;
 }
 
 nav,
 .topnav {
   position: relative !important;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  width: 900px !important;
-  max-width: 92% !important;
-  margin: 14px auto 12px !important;
-  padding: 9px !important;
-  min-height: 0 !important;
+  width: min(960px, 94%) !important;
+  margin: 22px auto 16px !important;
+  padding: 10px !important;
   display: block !important;
-  background: linear-gradient(180deg, rgba(232,255,244,.9), rgba(170,211,188,.84)) !important;
-  border: 1px solid rgba(255,255,255,.95) !important;
-  border-radius: 9px !important;
-  box-shadow: 0 3px 12px rgba(0,0,0,.32), inset 0 1px rgba(255,255,255,.95) !important;
+  background: linear-gradient(180deg, rgba(245,255,251,.64), rgba(135,193,166,.29)) !important;
+  border: 1px solid var(--glass-border) !important;
+  border-radius: 11px !important;
+  box-shadow:
+    0 7px 22px var(--glass-shadow),
+    inset 0 1px rgba(255,255,255,.95),
+    inset 0 -1px rgba(0,50,30,.18) !important;
+  backdrop-filter: blur(15px) saturate(125%) !important;
+  -webkit-backdrop-filter: blur(15px) saturate(125%) !important;
   text-align: center !important;
 }
 
 .nav-logo,
 .topnav .brand {
   display: block !important;
-  margin: 0 0 8px !important;
-  color: #ffffff !important;
+  margin: 1px 0 9px !important;
+  color: #fff !important;
   text-decoration: none !important;
-  text-shadow: 0 1px 2px #123b25, 0 0 7px rgba(255,255,255,.45) !important;
-  font: 600 28px "Segoe UI", Tahoma, sans-serif !important;
-  letter-spacing: 1px !important;
+  font: 600 29px "Segoe UI", Tahoma, sans-serif !important;
+  letter-spacing: .5px !important;
+  text-shadow: 0 1px 3px #16442d, 0 0 9px rgba(255,255,255,.48) !important;
 }
 
 .nav-links {
   display: block !important;
-  margin: 0 !important;
   padding: 5px !important;
-  background: rgba(242,255,248,.58) !important;
-  border: 1px solid rgba(255,255,255,.9) !important;
-  border-radius: 6px !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.85) !important;
-  text-align: center !important;
+  background: rgba(255,255,255,.24) !important;
+  border: 1px solid rgba(255,255,255,.66) !important;
+  border-radius: 7px !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.72) !important;
+  backdrop-filter: blur(9px) !important;
+  -webkit-backdrop-filter: blur(9px) !important;
 }
 
-.nav-links li { display: inline !important; margin: 0 !important; padding: 0 !important; }
+.nav-links li {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
 .nav-links a,
 .topnav > a:not(.brand):not(.back-btn) {
   display: inline-block !important;
   margin: 2px !important;
-  padding: 5px 12px !important;
-  min-width: 0 !important;
-  color: #163d27 !important;
-  background: linear-gradient(180deg, rgba(255,255,255,.94), rgba(204,232,215,.9)) !important;
-  border: 1px solid #8aae99 !important;
+  padding: 5px 13px !important;
+  color: #173b29 !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(218,244,229,.34)) !important;
+  border: 1px solid rgba(255,255,255,.88) !important;
   border-radius: 5px !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.95), 0 1px 2px rgba(0,0,0,.2) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.92), 0 1px 3px rgba(0,0,0,.25) !important;
   text-decoration: none !important;
-  text-transform: none !important;
-  text-align: center !important;
   font: 600 13px "Segoe UI", Tahoma, sans-serif !important;
+  text-shadow: 0 1px rgba(255,255,255,.85) !important;
 }
 
 .nav-links a:hover,
 .nav-links a.active,
 .topnav > a:not(.brand):not(.back-btn):hover {
   color: #fff !important;
-  background: linear-gradient(180deg, #7fc89d, #32845a) !important;
-  border-color: #236640 !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.4), 0 0 7px rgba(65,153,99,.6) !important;
+  background: linear-gradient(180deg, rgba(112,199,232,.82), rgba(42,119,164,.62)) !important;
+  border-color: rgba(255,255,255,.98) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.75), 0 0 10px rgba(121,221,255,.62) !important;
+  text-shadow: 0 1px 2px #17455b !important;
 }
 
-a { color: #126d3d !important; text-decoration: underline !important; }
-a:visited { color: #245c43 !important; }
-a:hover { color: #0b9a4c !important; }
+a {
+  color: #075f9b !important;
+  text-decoration: underline !important;
+}
+
+a:visited { color: #345b89 !important; }
+a:hover { color: #008ed0 !important; }
 
 body > div[style*="position:fixed"] {
   position: relative !important;
-  bottom: auto !important;
-  left: auto !important;
-  right: auto !important;
-  z-index: 1 !important;
-  width: 900px !important;
-  max-width: 92% !important;
-  margin: 6px auto !important;
-  padding: 7px 10px !important;
-  background: rgba(255,255,220,.78) !important;
-  color: #27351e !important;
-  border: 1px solid rgba(255,255,255,.95) !important;
+  inset: auto !important;
+  width: min(960px, 94%) !important;
+  margin: 7px auto !important;
+  padding: 7px 11px !important;
+  color: #244333 !important;
+  background: rgba(255,255,220,.54) !important;
+  border: 1px solid rgba(255,255,255,.85) !important;
   border-radius: 6px !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,.25), inset 0 1px rgba(255,255,255,.8) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
   font: 600 12px "Segoe UI", Tahoma, sans-serif !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,.2), inset 0 1px rgba(255,255,255,.8) !important;
-  backdrop-filter: blur(5px) !important;
 }
 
 marquee {
   display: block !important;
-  width: 900px !important;
-  max-width: 92% !important;
+  width: min(960px, 94%) !important;
   margin: 8px auto !important;
-  padding: 5px 9px !important;
-  background: linear-gradient(180deg, #3e9b67, #14643b) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255,255,255,.8) !important;
+  padding: 5px 10px !important;
+  color: #fff !important;
+  background: rgba(17, 92, 113, .52) !important;
+  border: 1px solid rgba(255,255,255,.72) !important;
   border-radius: 6px !important;
-  box-shadow: 0 2px 7px rgba(0,0,0,.3), inset 0 1px rgba(255,255,255,.45) !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,.3), inset 0 1px rgba(255,255,255,.45) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
   font: 600 13px "Segoe UI", Tahoma, sans-serif !important;
+  text-shadow: 0 1px 2px #15495b !important;
 }
 
 main,
@@ -181,68 +187,77 @@ section,
 .usecase-card,
 .spec-card,
 .app-card,
-.legal-card {
-  border-radius: 8px !important;
+.legal-card,
+.altcore-card {
+  border-radius: 9px !important;
 }
 
 section,
 .page-hero,
 .guide-hero,
 .pc-banner {
-  width: 900px !important;
-  max-width: 92% !important;
+  width: min(960px, 94%) !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding: 18px !important;
-  background: linear-gradient(180deg, rgba(248,255,251,.93), rgba(220,240,228,.9)) !important;
-  color: #17251d !important;
-  border: 1px solid rgba(255,255,255,.98) !important;
-  box-shadow: 0 4px 15px rgba(0,0,0,.27), inset 0 1px rgba(255,255,255,.98) !important;
-  backdrop-filter: blur(6px) !important;
+  padding: 20px !important;
+  color: var(--text) !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.54), rgba(219,248,232,.22)) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow:
+    0 8px 24px rgba(0,0,0,.36),
+    inset 0 1px rgba(255,255,255,.92),
+    inset 0 -1px rgba(0,55,35,.12) !important;
+  backdrop-filter: blur(18px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(135%) !important;
 }
 
-section + section { margin-top: 12px !important; }
+section + section { margin-top: 14px !important; }
 
 section::before,
 section::after,
 .hero-glow,
 .hero-glow-2,
-.scroll-hint { display: none !important; }
+.scroll-hint {
+  display: none !important;
+}
 
 h1,
 h2,
 h3,
 h4 {
-  color: #17492e !important;
-  background: transparent !important;
-  text-shadow: 0 1px 1px rgba(255,255,255,.9) !important;
-  font-family: "Segoe UI", Tahoma, sans-serif !important;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif !important;
+  color: #17462e !important;
+  text-shadow: 0 1px 2px rgba(255,255,255,.9) !important;
   letter-spacing: normal !important;
 }
 
 h1 {
-  margin: 4px 0 12px !important;
-  padding: 9px 13px !important;
-  background: linear-gradient(180deg, #5ebd83, #25734a) !important;
-  color: #ffffff !important;
-  border: 1px solid #24623e !important;
+  margin: 3px 0 14px !important;
+  padding: 10px 15px !important;
+  color: #fff !important;
+  background: linear-gradient(180deg, rgba(73,157,197,.72), rgba(28,105,132,.48)) !important;
+  border: 1px solid rgba(255,255,255,.82) !important;
   border-radius: 7px !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.55), 0 2px 6px rgba(0,0,0,.22) !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,.27), inset 0 1px rgba(255,255,255,.65) !important;
+  backdrop-filter: blur(9px) !important;
+  -webkit-backdrop-filter: blur(9px) !important;
   text-align: center !important;
-  text-shadow: 0 1px 2px #164328 !important;
+  text-shadow: 0 1px 3px #174457 !important;
   font-size: 32px !important;
 }
 
 h2 {
-  padding: 6px 10px !important;
-  margin: 10px 0 !important;
+  margin: 11px 0 !important;
+  padding: 7px 11px !important;
   color: #fff !important;
-  background: linear-gradient(180deg, #4eab72, #236c46) !important;
-  border: 1px solid #1c5838 !important;
+  background: linear-gradient(180deg, rgba(63,151,112,.75), rgba(22,91,57,.52)) !important;
+  border: 1px solid rgba(255,255,255,.78) !important;
   border-radius: 6px !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.4), 0 1px 4px rgba(0,0,0,.2) !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.55) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  text-shadow: 0 1px 3px #17482f !important;
   font-size: 23px !important;
-  text-shadow: 0 1px 2px #164328 !important;
 }
 
 h3 { font-size: 19px !important; }
@@ -252,11 +267,13 @@ h3 { font-size: 19px !important; }
   display: inline-block !important;
   padding: 3px 9px !important;
   margin-bottom: 6px !important;
-  background: linear-gradient(180deg, #e6ffe9, #acd8b8) !important;
-  color: #1b5935 !important;
-  border: 1px solid #7ba88a !important;
+  color: #16482d !important;
+  background: rgba(236,255,244,.55) !important;
+  border: 1px solid rgba(255,255,255,.82) !important;
   border-radius: 5px !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.9), 0 1px 3px rgba(0,0,0,.16) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.85), 0 2px 4px rgba(0,0,0,.17) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
   font: 600 11px "Segoe UI", Tahoma, sans-serif !important;
 }
 
@@ -265,8 +282,8 @@ p,
 li,
 .game-desc,
 .stat-label {
+  color: var(--text) !important;
   font-family: "Segoe UI", Tahoma, Arial, sans-serif !important;
-  color: #17251d !important;
 }
 
 .hero-sub { font-size: 16px !important; }
@@ -281,15 +298,17 @@ button,
 .download-btn,
 .action-btn {
   display: inline-block !important;
-  padding: 5px 14px !important;
   margin: 3px !important;
-  border: 1px solid #7e9f8a !important;
+  padding: 5px 14px !important;
+  color: #173b2a !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.86), rgba(210,237,222,.35)) !important;
+  border: 1px solid rgba(255,255,255,.9) !important;
   border-radius: 5px !important;
-  background: linear-gradient(180deg, #ffffff, #e4f0e8 48%, #c3dccb 52%, #f7fcf9) !important;
-  color: #173c28 !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.98), 0 1px 3px rgba(0,0,0,.22) !important;
-  text-shadow: 0 1px rgba(255,255,255,.9) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.95), 0 2px 4px rgba(0,0,0,.25) !important;
+  backdrop-filter: blur(7px) !important;
+  -webkit-backdrop-filter: blur(7px) !important;
   text-decoration: none !important;
+  text-shadow: 0 1px rgba(255,255,255,.8) !important;
   font: 600 12px "Segoe UI", Tahoma, sans-serif !important;
   cursor: pointer !important;
 }
@@ -304,9 +323,10 @@ button:hover,
 .download-btn:hover,
 .action-btn:hover {
   color: #fff !important;
-  background: linear-gradient(180deg, #73c795, #2e8056) !important;
-  border-color: #246640 !important;
-  text-shadow: 0 1px 2px #17452c !important;
+  background: linear-gradient(180deg, rgba(102,195,230,.82), rgba(42,111,151,.62)) !important;
+  border-color: rgba(255,255,255,.98) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.7), 0 0 9px rgba(107,215,255,.62) !important;
+  text-shadow: 0 1px 2px #174457 !important;
 }
 
 button:active,
@@ -318,7 +338,7 @@ button:active,
 .email-block a:active,
 .download-btn:active,
 .action-btn:active {
-  box-shadow: inset 0 2px 4px rgba(0,0,0,.25) !important;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,.3) !important;
 }
 
 .project-card,
@@ -334,11 +354,12 @@ button:active,
 .panel,
 .content-card,
 .info-card {
-  background: linear-gradient(180deg, rgba(247,255,250,.9), rgba(209,232,217,.88)) !important;
-  color: #17251d !important;
-  border: 1px solid rgba(255,255,255,.95) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,.2), inset 0 1px rgba(255,255,255,.9) !important;
-  border-radius: 7px !important;
+  color: var(--text) !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.49), rgba(214,244,225,.20)) !important;
+  border: 1px solid rgba(255,255,255,.78) !important;
+  box-shadow: 0 4px 13px rgba(0,0,0,.29), inset 0 1px rgba(255,255,255,.82) !important;
+  backdrop-filter: blur(14px) saturate(125%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(125%) !important;
 }
 
 .project-card:hover,
@@ -350,43 +371,45 @@ button:active,
 .spec-card:hover,
 .altcore-card:hover,
 .app-card:hover {
-  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(226,248,234,.95)) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,.25), 0 0 6px rgba(71,158,103,.3) !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.62), rgba(191,238,211,.30)) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 7px 17px rgba(0,0,0,.34), 0 0 8px rgba(112,213,167,.3) !important;
 }
 
-.game-icon { filter: none !important; }
+.game-icon { filter: drop-shadow(0 2px 2px rgba(0,0,0,.28)) !important; }
 
 table {
   width: 100% !important;
   border-collapse: separate !important;
   border-spacing: 0 !important;
   overflow: hidden !important;
-  background: rgba(225,242,231,.8) !important;
-  border: 1px solid #91b49e !important;
+  background: rgba(235,250,241,.30) !important;
+  border: 1px solid rgba(255,255,255,.75) !important;
   border-radius: 7px !important;
-  box-shadow: 0 2px 7px rgba(0,0,0,.18) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
 }
 
 th {
   padding: 6px !important;
-  background: linear-gradient(180deg, #59b87d, #2b764e) !important;
   color: #fff !important;
+  background: linear-gradient(180deg, rgba(61,151,194,.78), rgba(29,100,132,.56)) !important;
   border: 0 !important;
-  border-bottom: 1px solid #205d3c !important;
+  border-bottom: 1px solid rgba(255,255,255,.62) !important;
+  text-shadow: 0 1px 2px #174457 !important;
   font: 600 13px "Segoe UI", Tahoma, sans-serif !important;
-  text-shadow: 0 1px 2px #164328 !important;
 }
 
 td {
   padding: 5px !important;
-  background: rgba(255,255,255,.82) !important;
-  color: #17251d !important;
+  color: var(--text) !important;
+  background: rgba(255,255,255,.40) !important;
   border: 0 !important;
-  border-bottom: 1px solid rgba(105,143,118,.3) !important;
+  border-bottom: 1px solid rgba(255,255,255,.36) !important;
 }
 
-tr:nth-child(even) td { background: rgba(222,240,228,.86) !important; }
+tr:nth-child(even) td { background: rgba(207,238,219,.29) !important; }
 
 .badge,
 .tag,
@@ -397,78 +420,98 @@ tr:nth-child(even) td { background: rgba(222,240,228,.86) !important; }
   display: inline-block !important;
   padding: 3px 7px !important;
   margin: 2px !important;
+  color: #16472d !important;
+  background: rgba(230,255,240,.50) !important;
+  border: 1px solid rgba(255,255,255,.82) !important;
   border-radius: 4px !important;
-  border: 1px solid #78a88a !important;
-  background: linear-gradient(180deg, #e7fff0, #acd6b8) !important;
-  color: #1b5735 !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.9), 0 1px 3px rgba(0,0,0,.18) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
   font: 600 11px "Segoe UI", Tahoma, sans-serif !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.9), 0 1px 2px rgba(0,0,0,.15) !important;
 }
 
 input,
 textarea,
 select {
-  border: 1px solid #8eab98 !important;
+  color: #172f22 !important;
+  background: rgba(255,255,255,.62) !important;
+  border: 1px solid rgba(255,255,255,.88) !important;
   border-radius: 4px !important;
-  background: rgba(255,255,255,.94) !important;
-  color: #17251d !important;
-  box-shadow: inset 0 1px 3px rgba(0,0,0,.12), 0 1px rgba(255,255,255,.9) !important;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.16), 0 1px rgba(255,255,255,.8) !important;
+  backdrop-filter: blur(7px) !important;
+  -webkit-backdrop-filter: blur(7px) !important;
   font: 13px "Segoe UI", Tahoma, sans-serif !important;
 }
 
 hr {
-  height: 2px !important;
+  height: 1px !important;
   border: 0 !important;
-  background: linear-gradient(90deg, transparent, #68a57e, transparent) !important;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.82), rgba(45,122,81,.7), rgba(255,255,255,.82), transparent) !important;
 }
 
 img,
-video { border-radius: 5px !important; }
+video {
+  border-radius: 5px !important;
+  box-shadow: 0 2px 7px rgba(0,0,0,.25) !important;
+}
 
 footer {
-  width: 900px !important;
-  max-width: 92% !important;
-  margin: 12px auto !important;
-  padding: 9px !important;
-  background: linear-gradient(180deg, rgba(35,103,65,.96), rgba(8,54,31,.98)) !important;
-  color: #dff5e7 !important;
-  border: 1px solid rgba(255,255,255,.75) !important;
-  border-radius: 7px !important;
-  box-shadow: 0 3px 10px rgba(0,0,0,.3), inset 0 1px rgba(255,255,255,.25) !important;
+  width: min(960px, 94%) !important;
+  margin: 14px auto !important;
+  padding: 10px !important;
+  color: #e7fff0 !important;
+  background: linear-gradient(180deg, rgba(24,91,61,.58), rgba(4,50,31,.45)) !important;
+  border: 1px solid rgba(255,255,255,.72) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 5px 15px rgba(0,0,0,.34), inset 0 1px rgba(255,255,255,.4) !important;
+  backdrop-filter: blur(13px) !important;
+  -webkit-backdrop-filter: blur(13px) !important;
   text-align: center !important;
   font: 12px "Segoe UI", Tahoma, sans-serif !important;
 }
 
 footer span { margin: 0 7px !important; }
-footer a { color: #b9ffd0 !important; }
+footer a { color: #c7ffe0 !important; }
 
 .altcore-page {
-  width: 900px !important;
-  max-width: 92% !important;
-  margin: 12px auto !important;
-  padding: 18px !important;
-  background: linear-gradient(180deg, rgba(248,255,251,.94), rgba(215,237,222,.9)) !important;
-  border: 1px solid rgba(255,255,255,.98) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 4px 15px rgba(0,0,0,.27), inset 0 1px rgba(255,255,255,.98) !important;
+  width: min(960px, 94%) !important;
+  margin: 14px auto !important;
+  padding: 20px !important;
+  color: var(--text) !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.52), rgba(213,245,224,.22)) !important;
+  border: 1px solid var(--glass-border) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.36), inset 0 1px rgba(255,255,255,.92) !important;
+  backdrop-filter: blur(18px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(135%) !important;
 }
 
-.altcore-logo { filter: none !important; }
+.altcore-logo { filter: drop-shadow(0 2px 3px rgba(0,0,0,.3)) !important; }
+
 .altcore-notice {
+  color: #3e381a !important;
+  background: rgba(255,249,193,.48) !important;
+  border: 1px solid rgba(255,255,255,.82) !important;
   border-radius: 6px !important;
-  border: 1px solid #b9a85b !important;
-  background: rgba(255,250,203,.86) !important;
-  color: #423d1b !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,.15), inset 0 1px rgba(255,255,255,.9) !important;
+  box-shadow: 0 3px 9px rgba(0,0,0,.2), inset 0 1px rgba(255,255,255,.82) !important;
+  backdrop-filter: blur(9px) !important;
+  -webkit-backdrop-filter: blur(9px) !important;
 }
 
 @media (max-width: 700px) {
-  nav, .topnav, section, .page-hero, .guide-hero, .pc-banner, footer, marquee,
+  nav,
+  .topnav,
+  section,
+  .page-hero,
+  .guide-hero,
+  .pc-banner,
+  footer,
+  marquee,
   body > div[style*="position:fixed"] {
     width: 94% !important;
   }
 
-  .nav-logo, .topnav .brand { font-size: 23px !important; }
+  .nav-logo,
+  .topnav .brand { font-size: 23px !important; }
   h1 { font-size: 27px !important; }
-  .nav-links a { padding: 4px 7px !important; }
+  .nav-links a { padding: 4px 8px !important; }
 }
