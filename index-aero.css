@@ -1,0 +1,252 @@
+/* MalachiteVR home page layout for the Vista Aero theme.
+   Keep this file page-specific. Shared glass styling belongs to retro-2000s.css. */
+
+#hero {
+  width: min(960px, 94%) !important;
+  max-width: none !important;
+  margin: 12px auto !important;
+  padding: 22px !important;
+  text-align: center !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.46), rgba(219,248,232,.18)) !important;
+  border: 1px solid rgba(255,255,255,.84) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.34), inset 0 1px rgba(255,255,255,.94) !important;
+  backdrop-filter: blur(18px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(135%) !important;
+}
+
+#hero .hero-sub {
+  max-width: 720px !important;
+  margin: 10px auto !important;
+  color: #173226 !important;
+  text-shadow: 0 1px 1px rgba(255,255,255,.55) !important;
+}
+
+.hero-cta {
+  margin: 14px 0 4px !important;
+}
+
+#about,
+#games,
+section.pc-banner,
+.pc-banner {
+  width: min(960px, 94%) !important;
+  max-width: none !important;
+  margin: 14px auto !important;
+  padding: 20px !important;
+  color: #173226 !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.48), rgba(219,248,232,.19)) !important;
+  border: 1px solid rgba(255,255,255,.84) !important;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.34), inset 0 1px rgba(255,255,255,.94) !important;
+  backdrop-filter: blur(18px) saturate(135%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(135%) !important;
+}
+
+.about-grid {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr !important;
+  gap: 12px !important;
+}
+
+.about-text,
+#about p {
+  color: #173226 !important;
+  text-shadow: 0 1px 1px rgba(255,255,255,.48) !important;
+}
+
+.skills-list {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+  margin-top: 12px !important;
+}
+
+.skill-item {
+  display: inline-block !important;
+  padding: 3px 8px !important;
+  color: #194b32 !important;
+  background: rgba(230,249,238,.46) !important;
+  border: 1px solid rgba(255,255,255,.72) !important;
+  border-radius: 4px !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.72), 0 1px 2px rgba(0,0,0,.14) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+}
+
+.stat-block {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-bottom: 7px !important;
+  padding: 8px 10px !important;
+  color: #173226 !important;
+  background: rgba(235,250,244,.34) !important;
+  border: 1px solid rgba(255,255,255,.76) !important;
+  border-radius: 6px !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.78), 0 3px 8px rgba(0,0,0,.20) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+.stat-num {
+  color: #24633d !important;
+  font-weight: 700 !important;
+}
+
+.stat-label {
+  color: #315a43 !important;
+}
+
+.games-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px !important;
+}
+
+.game-card,
+.project-card,
+.tier-card,
+.step,
+.offering-card,
+.usecase-card,
+.spec-card,
+.cta-box {
+  min-width: 0 !important;
+  padding: 14px !important;
+  color: #173226 !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.46), rgba(214,244,225,.18)) !important;
+  border: 1px solid rgba(255,255,255,.78) !important;
+  border-radius: 9px !important;
+  box-shadow: 0 4px 13px rgba(0,0,0,.28), inset 0 1px rgba(255,255,255,.84) !important;
+  backdrop-filter: blur(14px) saturate(125%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(125%) !important;
+}
+
+.game-card:hover,
+.project-card:hover,
+.tier-card:hover,
+.step:hover,
+.offering-card:hover,
+.usecase-card:hover,
+.spec-card:hover {
+  background: linear-gradient(135deg, rgba(255,255,255,.56), rgba(209,240,229,.25)) !important;
+  box-shadow: 0 7px 18px rgba(0,0,0,.30), 0 0 12px rgba(117,221,255,.20), inset 0 1px rgba(255,255,255,.92) !important;
+}
+
+.game-title,
+.project-title,
+.tier-name,
+.step-title,
+.offering-title,
+.usecase-title,
+.spec-name {
+  color: #245f3e !important;
+  text-shadow: 0 1px 2px rgba(255,255,255,.85) !important;
+}
+
+.game-desc,
+.project-desc,
+.step-desc,
+.offering-desc,
+.usecase-desc,
+.feature-desc {
+  color: #234d35 !important;
+}
+
+.pc-banner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 18px !important;
+}
+
+.pc-banner-text {
+  flex: 1 !important;
+}
+
+.pc-banner p {
+  color: #234d35 !important;
+}
+
+.email-block {
+  background: rgba(235,250,244,.32) !important;
+  color: #173226 !important;
+  border: 1px solid rgba(255,255,255,.72) !important;
+  border-radius: 7px !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.78), 0 3px 9px rgba(0,0,0,.20) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+}
+
+table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  background: rgba(255,255,255,.18) !important;
+  border: 1px solid rgba(255,255,255,.72) !important;
+  border-radius: 7px !important;
+  overflow: hidden !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+th,
+td {
+  padding: 7px !important;
+  color: #173226 !important;
+  border: 1px solid rgba(255,255,255,.42) !important;
+  background: rgba(255,255,255,.12) !important;
+}
+
+th {
+  color: #fff !important;
+  background: rgba(36,119,91,.58) !important;
+  text-shadow: 0 1px 2px #174457 !important;
+}
+
+tr:nth-child(even) td {
+  background: rgba(235,250,244,.20) !important;
+}
+
+.badge,
+.tag,
+.classified-badge,
+.os-badge,
+.hero-badges span {
+  color: #194b32 !important;
+  background: rgba(224,249,235,.46) !important;
+  border: 1px solid rgba(255,255,255,.70) !important;
+  border-radius: 4px !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.68), 0 1px 2px rgba(0,0,0,.14) !important;
+}
+
+footer {
+  width: min(960px, 94%) !important;
+  max-width: none !important;
+  margin: 14px auto !important;
+  padding: 10px !important;
+  color: #28543b !important;
+  background: rgba(235,250,244,.28) !important;
+  border: 1px solid rgba(255,255,255,.70) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.78) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+footer a {
+  color: #075f9b !important;
+}
+
+@media (max-width: 700px) {
+  .about-grid,
+  .games-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pc-banner,
+  .email-block {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+}
