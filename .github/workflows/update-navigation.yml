@@ -2,110 +2,90 @@ name: Update site navigation
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
 
 permissions:
   contents: write
 
 jobs:
-  update-navigation:
-    if: github.actor != 'github-actions[bot]'
+  update:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out site
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Update navigation bars
-        shell: python
+      - name: Update navigation
         run: |
+          python3 <<'PY'
           from pathlib import Path
           import re
 
-          root = Path('.')
-
           global_nav = '''<nav>
-    <a class="nav-logo" href="index.html">MALACHITEVR</a>
-    <ul class="nav-links">
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#games">Games</a></li>
-      <li><a href="pcbuilds.html">PC Builds</a></li>
-      <li><a href="mypc.html">My PC</a></li>
-      <li><a href="minecraft.html">Minecraft Server</a></li>
-      <li><a href="my-current-work.html">Projects</a></li>
-      <li><a href="apps.html">Released Apps</a></li>
-      <li><a href="minecraft_relay_guide.html">Relay Guide</a></li>
-      <li><a href="malachite-times.html">The Malachite Times</a></li>
-      <li><a href="altcore.html">Altcore</a></li>
-    </ul>
-  </nav>'''
+            <a class="nav-logo" href="index.html">MALACHITEVR</a>
+            <ul class="nav-links">
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#games">Games</a></li>
+              <li><a href="pcbuilds.html">PC Builds</a></li>
+              <li><a href="mypc.html">My PC</a></li>
+              <li><a href="minecraft.html">Minecraft Server</a></li>
+              <li><a href="my-current-work.html">Projects</a></li>
+              <li><a href="apps.html">Released Apps</a></li>
+              <li><a href="minecraft_relay_guide.html">Relay Guide</a></li>
+              <li><a href="malachite-times.html">The Malachite Times</a></li>
+              <li><a href="altcore.html">Altcore</a></li>
+            </ul>
+          </nav>'''
 
           altcore_nav = '''<nav>
-    <a class="nav-logo" href="index.html">MALACHITEVR</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#games">Games</a></li>
-      <li><a href="pcbuilds.html">PC Builds</a></li>
-      <li><a href="mypc.html">My PC</a></li>
-      <li><a href="minecraft.html">Minecraft Server</a></li>
-      <li><a href="my-current-work.html">Projects</a></li>
-      <li><a href="apps.html">Released Apps</a></li>
-      <li><a href="minecraft_relay_guide.html">Relay Guide</a></li>
-      <li><a href="malachite-times.html">The Malachite Times</a></li>
-      <li><a href="altcore.html" class="active">Altcore</a></li>
-      <li><a href="altcore-privacy.html">Privacy</a></li>
-      <li><a href="altcore-terms.html">Terms</a></li>
-    </ul>
-  </nav>'''
+            <a class="nav-logo" href="index.html">MALACHITEVR</a>
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#games">Games</a></li>
+              <li><a href="pcbuilds.html">PC Builds</a></li>
+              <li><a href="mypc.html">My PC</a></li>
+              <li><a href="minecraft.html">Minecraft Server</a></li>
+              <li><a href="my-current-work.html">Projects</a></li>
+              <li><a href="apps.html">Released Apps</a></li>
+              <li><a href="minecraft_relay_guide.html">Relay Guide</a></li>
+              <li><a href="malachite-times.html">The Malachite Times</a></li>
+              <li><a href="altcore.html" class="active">Altcore</a></li>
+              <li><a href="altcore-privacy.html">Privacy</a></li>
+              <li><a href="altcore-terms.html">Terms</a></li>
+            </ul>
+          </nav>'''
 
-          for path in root.glob('*.html'):
+          for path in Path('.').glob('*.html'):
               if path.name in {'apps.html', 'abuseipdb-verification.html'}:
                   continue
-
               text = path.read_text(encoding='utf-8')
               original = text
 
               if path.name in {'altcore.html', 'altcore-privacy.html', 'altcore-terms.html'}:
                   text, count = re.subn(r'<nav>\s*<a class="nav-logo".*?</nav>', altcore_nav, text, count=1, flags=re.S)
-                  if count == 0:
-                      raise RuntimeError(f'Could not find Altcore navigation in {path}')
+                  if not count:
+                      raise SystemExit(f'Altcore nav not found in {path}')
               elif path.name == 'aboutme.html':
-                  text = text.replace(
-                      '  <a href="altcore.html">Altcore</a>\n',
-                      '  <a href="apps.html">Released Apps</a>\n  <a href="altcore.html">Altcore</a>\n',
-                      1,
-                  )
+                  text = text.replace('  <a href="altcore.html">Altcore</a>\n', '  <a href="apps.html">Released Apps</a>\n  <a href="altcore.html">Altcore</a>\n', 1)
               elif path.name == 'legal.html':
-                  text = text.replace(
-                      '    <a href="altcore.html">Altcore</a>\n',
-                      '    <a href="apps.html">Released Apps</a>\n    <a href="altcore.html">Altcore</a>\n',
-                      1,
-                  )
+                  text = text.replace('    <a href="altcore.html">Altcore</a>\n', '    <a href="apps.html">Released Apps</a>\n    <a href="altcore.html">Altcore</a>\n', 1)
               elif path.name == 'malachite-times.html':
-                  text = text.replace(
-                      '<a class="back-link" href="index.html">← Return to MalachiteVR</a>',
-                      '<a class="back-link" href="index.html">← Return to MalachiteVR</a><a class="back-link" href="apps.html">Released Apps</a>',
-                      1,
-                  )
+                  text = text.replace('<a class="back-link" href="index.html">← Return to MalachiteVR</a>', '<a class="back-link" href="index.html">← Return to MalachiteVR</a><a class="back-link" href="apps.html">Released Apps</a>', 1)
               else:
-                  # Replace the site's existing primary nav with the current unified nav.
                   text, count = re.subn(r'<nav>\s*<a class="nav-logo".*?</nav>', global_nav, text, count=1, flags=re.S)
-                  if count == 0:
+                  if not count:
                       continue
 
               if text != original:
                   path.write_text(text, encoding='utf-8')
+          PY
 
-      - name: Commit navigation updates and remove temporary workflow
-        shell: bash
+      - name: Commit changes and remove temporary workflow
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add '*.html'
           git rm .github/workflows/update-navigation.yml
-          if git diff --cached --quiet; then
-            echo "No navigation changes needed."
-            exit 0
-          fi
           git commit -m "Update site navigation and Released Apps links"
           git push
