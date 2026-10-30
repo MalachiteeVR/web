@@ -9,7 +9,6 @@ permissions:
 
 jobs:
   theme:
-    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,36 +17,27 @@ jobs:
           fetch-depth: 0
 
       - name: Add retro theme to site pages
-        shell: bash
         run: |
-          set -euo pipefail
+          python3 <<'PY'
+          from pathlib import Path
 
-          for file in *.html; do
-            case "$file" in
-              abuseipdb-verification.html|malachite-times-php-security.html)
-                continue
-                ;;
-            esac
+          excluded = {
+              'abuseipdb-verification.html',
+              'malachite-times-php-security.html',
+          }
+          marker = '<link rel="stylesheet" href="retro-2000s.css" />'
 
-            if grep -q 'retro-2000s.css' "$file"; then
-              continue
-            fi
-
-            python3 - "$file" <<'PY'
-import pathlib
-import sys
-
-path = pathlib.Path(sys.argv[1])
-text = path.read_text(encoding="utf-8")
-marker = '<link rel="stylesheet" href="retro-2000s.css" />'
-if marker in text or '</head>' not in text.lower():
-    raise SystemExit(0)
-
-idx = text.lower().rfind('</head>')
-text = text[:idx] + '  ' + marker + '\n' + text[idx:]
-path.write_text(text, encoding="utf-8")
-PY
-          done
+          for path in Path('.').glob('*.html'):
+              if path.name in excluded:
+                  continue
+              text = path.read_text(encoding='utf-8')
+              if marker in text or '</head>' not in text.lower():
+                  continue
+              idx = text.lower().rfind('</head>')
+              text = text[:idx] + '  ' + marker + '\n' + text[idx:]
+              path.write_text(text, encoding='utf-8')
+              print(f'Updated {path.name}')
+          PY
 
       - name: Remove one-shot workflow
         run: rm -f .github/workflows/apply-retro-theme.yml
