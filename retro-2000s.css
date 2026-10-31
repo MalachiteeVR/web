@@ -1,20 +1,20 @@
-/* MalachiteeVR Vista Aero theme */
+/* MalachiteeVR Vista Aero theme
+   Performance-tuned: keep glass/transparency, but limit backdrop-filter to
+   the major surfaces instead of applying GPU-heavy blur to every element. */
 
 :root {
   --aero-green: #2f8f5b;
   --aero-green-dark: #145b37;
   --aero-blue: #4f9fc4;
-  --glass-white: rgba(255, 255, 255, 0.58);
-  --glass-light: rgba(235, 250, 244, 0.42);
-  --glass-dark: rgba(20, 70, 48, 0.32);
-  --glass-border: rgba(255, 255, 255, 0.82);
-  --glass-shadow: rgba(0, 0, 0, 0.42);
+  --glass-white: rgba(255,255,255,.58);
+  --glass-light: rgba(235,250,244,.42);
+  --glass-dark: rgba(20,70,48,.32);
+  --glass-border: rgba(255,255,255,.82);
+  --glass-shadow: rgba(0,0,0,.36);
   --text: #173226;
 }
 
-* {
-  box-sizing: border-box !important;
-}
+*, *::before, *::after { box-sizing: border-box !important; }
 
 html {
   min-height: 100%;
@@ -26,52 +26,41 @@ body {
   margin: 0 !important;
   padding: 0 0 42px !important;
   color: var(--text) !important;
-  font-family: "Segoe UI", Tahoma, Arial, sans-serif !important;
-  font-size: 15px !important;
-  line-height: 1.45 !important;
+  font: 15px/1.45 "Segoe UI", Tahoma, Arial, sans-serif !important;
   background:
-    radial-gradient(ellipse at 15% 82%, rgba(221, 255, 122, 0.72) 0%, rgba(139, 216, 72, 0.32) 24%, transparent 48%),
-    radial-gradient(ellipse at 88% 18%, rgba(53, 210, 220, 0.66) 0%, rgba(26, 143, 169, 0.34) 28%, transparent 56%),
-    radial-gradient(ellipse at 52% 110%, rgba(74, 177, 224, 0.56) 0%, transparent 43%),
+    radial-gradient(ellipse at 15% 82%, rgba(221,255,122,.72) 0%, rgba(139,216,72,.32) 24%, transparent 48%),
+    radial-gradient(ellipse at 88% 18%, rgba(53,210,220,.66) 0%, rgba(26,143,169,.34) 28%, transparent 56%),
+    radial-gradient(ellipse at 52% 110%, rgba(74,177,224,.56) 0%, transparent 43%),
     linear-gradient(155deg, #0b5965 0%, #157d91 31%, #3b9d91 57%, #87bd5b 78%, #d4e46f 100%) !important;
-  background-attachment: fixed !important;
   overflow-x: hidden !important;
 }
 
-body::before {
-  content: "" !important;
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: -1 !important;
-  pointer-events: none !important;
-  background:
-    linear-gradient(124deg, transparent 0 28%, rgba(255,255,255,.18) 29%, transparent 31%),
-    linear-gradient(147deg, transparent 0 61%, rgba(255,255,255,.14) 62%, transparent 64%),
-    radial-gradient(ellipse at 48% 44%, rgba(255,255,255,.16), transparent 36%) !important;
-}
-
-body::after {
-  content: "" !important;
+/* Avoid a full-viewport fixed pseudo-element. The body background already
+   supplies the Aero atmosphere without creating another composited layer. */
+body::before,
+body::after,
+section::before,
+section::after,
+.hero-glow,
+.hero-glow-2,
+.scroll-hint {
   display: none !important;
 }
 
 nav,
 .topnav {
   position: relative !important;
-  width: min(960px, 94%) !important;
+  width: min(960px,94%) !important;
   margin: 22px auto 16px !important;
   padding: 10px !important;
   display: block !important;
+  text-align: center !important;
   background: linear-gradient(180deg, rgba(245,255,251,.64), rgba(135,193,166,.29)) !important;
   border: 1px solid var(--glass-border) !important;
   border-radius: 11px !important;
-  box-shadow:
-    0 7px 22px var(--glass-shadow),
-    inset 0 1px rgba(255,255,255,.95),
-    inset 0 -1px rgba(0,50,30,.18) !important;
-  backdrop-filter: blur(15px) saturate(125%) !important;
-  -webkit-backdrop-filter: blur(15px) saturate(125%) !important;
-  text-align: center !important;
+  box-shadow: 0 6px 16px var(--glass-shadow), inset 0 1px rgba(255,255,255,.9) !important;
+  backdrop-filter: blur(10px) saturate(115%) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(115%) !important;
 }
 
 .nav-logo,
@@ -82,7 +71,7 @@ nav,
   text-decoration: none !important;
   font: 600 29px "Segoe UI", Tahoma, sans-serif !important;
   letter-spacing: .5px !important;
-  text-shadow: 0 1px 3px #16442d, 0 0 9px rgba(255,255,255,.48) !important;
+  text-shadow: 0 1px 3px #16442d, 0 0 7px rgba(255,255,255,.4) !important;
 }
 
 .nav-links {
@@ -92,15 +81,9 @@ nav,
   border: 1px solid rgba(255,255,255,.66) !important;
   border-radius: 7px !important;
   box-shadow: inset 0 1px rgba(255,255,255,.72) !important;
-  backdrop-filter: blur(9px) !important;
-  -webkit-backdrop-filter: blur(9px) !important;
 }
 
-.nav-links li {
-  display: inline !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+.nav-links li { display: inline !important; margin: 0 !important; padding: 0 !important; }
 
 .nav-links a,
 .topnav > a:not(.brand):not(.back-btn) {
@@ -111,7 +94,7 @@ nav,
   background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(218,244,229,.34)) !important;
   border: 1px solid rgba(255,255,255,.88) !important;
   border-radius: 5px !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.92), 0 1px 3px rgba(0,0,0,.25) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.9), 0 1px 3px rgba(0,0,0,.2) !important;
   text-decoration: none !important;
   font: 600 13px "Segoe UI", Tahoma, sans-serif !important;
   text-shadow: 0 1px rgba(255,255,255,.85) !important;
@@ -123,46 +106,38 @@ nav,
   color: #fff !important;
   background: linear-gradient(180deg, rgba(112,199,232,.82), rgba(42,119,164,.62)) !important;
   border-color: rgba(255,255,255,.98) !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.75), 0 0 10px rgba(121,221,255,.62) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.75), 0 0 8px rgba(121,221,255,.5) !important;
   text-shadow: 0 1px 2px #17455b !important;
 }
 
-a {
-  color: #075f9b !important;
-  text-decoration: underline !important;
-}
-
+a { color: #075f9b !important; text-decoration: underline !important; }
 a:visited { color: #345b89 !important; }
 a:hover { color: #008ed0 !important; }
 
 body > div[style*="position:fixed"] {
   position: relative !important;
   inset: auto !important;
-  width: min(960px, 94%) !important;
+  width: min(960px,94%) !important;
   margin: 7px auto !important;
   padding: 7px 11px !important;
   color: #244333 !important;
   background: rgba(255,255,220,.54) !important;
   border: 1px solid rgba(255,255,255,.85) !important;
   border-radius: 6px !important;
-  box-shadow: 0 3px 10px rgba(0,0,0,.25), inset 0 1px rgba(255,255,255,.8) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,.2), inset 0 1px rgba(255,255,255,.8) !important;
   font: 600 12px "Segoe UI", Tahoma, sans-serif !important;
 }
 
 marquee {
   display: block !important;
-  width: min(960px, 94%) !important;
+  width: min(960px,94%) !important;
   margin: 8px auto !important;
   padding: 5px 10px !important;
   color: #fff !important;
-  background: rgba(17, 92, 113, .52) !important;
+  background: rgba(17,92,113,.52) !important;
   border: 1px solid rgba(255,255,255,.72) !important;
   border-radius: 6px !important;
-  box-shadow: 0 3px 10px rgba(0,0,0,.3), inset 0 1px rgba(255,255,255,.45) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.45) !important;
   font: 600 13px "Segoe UI", Tahoma, sans-serif !important;
   text-shadow: 0 1px 2px #15495b !important;
 }
@@ -188,38 +163,25 @@ section,
 .spec-card,
 .app-card,
 .legal-card,
-.altcore-card {
-  border-radius: 9px !important;
-}
+.altcore-card { border-radius: 9px !important; }
 
 section,
 .page-hero,
 .guide-hero,
 .pc-banner {
-  width: min(960px, 94%) !important;
+  width: min(960px,94%) !important;
   margin-left: auto !important;
   margin-right: auto !important;
   padding: 20px !important;
   color: var(--text) !important;
   background: linear-gradient(135deg, rgba(255,255,255,.54), rgba(219,248,232,.22)) !important;
   border: 1px solid var(--glass-border) !important;
-  box-shadow:
-    0 8px 24px rgba(0,0,0,.36),
-    inset 0 1px rgba(255,255,255,.92),
-    inset 0 -1px rgba(0,55,35,.12) !important;
-  backdrop-filter: blur(18px) saturate(135%) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(135%) !important;
+  box-shadow: 0 7px 18px rgba(0,0,0,.3), inset 0 1px rgba(255,255,255,.9) !important;
+  backdrop-filter: blur(12px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(120%) !important;
 }
 
 section + section { margin-top: 14px !important; }
-
-section::before,
-section::after,
-.hero-glow,
-.hero-glow-2,
-.scroll-hint {
-  display: none !important;
-}
 
 h1,
 h2,
@@ -227,7 +189,7 @@ h3,
 h4 {
   font-family: "Segoe UI", Tahoma, Arial, sans-serif !important;
   color: #17462e !important;
-  text-shadow: 0 1px 2px rgba(255,255,255,.9) !important;
+  text-shadow: 0 1px 2px rgba(255,255,255,.85) !important;
   letter-spacing: normal !important;
 }
 
@@ -238,9 +200,7 @@ h1 {
   background: linear-gradient(180deg, rgba(73,157,197,.72), rgba(28,105,132,.48)) !important;
   border: 1px solid rgba(255,255,255,.82) !important;
   border-radius: 7px !important;
-  box-shadow: 0 3px 10px rgba(0,0,0,.27), inset 0 1px rgba(255,255,255,.65) !important;
-  backdrop-filter: blur(9px) !important;
-  -webkit-backdrop-filter: blur(9px) !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,.23), inset 0 1px rgba(255,255,255,.65) !important;
   text-align: center !important;
   text-shadow: 0 1px 3px #174457 !important;
   font-size: 32px !important;
@@ -253,9 +213,7 @@ h2 {
   background: linear-gradient(180deg, rgba(63,151,112,.75), rgba(22,91,57,.52)) !important;
   border: 1px solid rgba(255,255,255,.78) !important;
   border-radius: 6px !important;
-  box-shadow: 0 2px 7px rgba(0,0,0,.24), inset 0 1px rgba(255,255,255,.55) !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2), inset 0 1px rgba(255,255,255,.55) !important;
   text-shadow: 0 1px 3px #17482f !important;
   font-size: 23px !important;
 }
@@ -271,9 +229,7 @@ h3 { font-size: 19px !important; }
   background: rgba(236,255,244,.55) !important;
   border: 1px solid rgba(255,255,255,.82) !important;
   border-radius: 5px !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.85), 0 2px 4px rgba(0,0,0,.17) !important;
-  backdrop-filter: blur(6px) !important;
-  -webkit-backdrop-filter: blur(6px) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.85), 0 1px 3px rgba(0,0,0,.14) !important;
   font: 600 11px "Segoe UI", Tahoma, sans-serif !important;
 }
 
@@ -281,11 +237,7 @@ h3 { font-size: 19px !important; }
 p,
 li,
 .game-desc,
-.stat-label {
-  color: var(--text) !important;
-  font-family: "Segoe UI", Tahoma, Arial, sans-serif !important;
-}
-
+.stat-label { color: var(--text) !important; font-family: "Segoe UI", Tahoma, Arial, sans-serif !important; }
 .hero-sub { font-size: 16px !important; }
 
 button,
@@ -304,9 +256,7 @@ button,
   background: linear-gradient(180deg, rgba(255,255,255,.86), rgba(210,237,222,.35)) !important;
   border: 1px solid rgba(255,255,255,.9) !important;
   border-radius: 5px !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.95), 0 2px 4px rgba(0,0,0,.25) !important;
-  backdrop-filter: blur(7px) !important;
-  -webkit-backdrop-filter: blur(7px) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.95), 0 2px 4px rgba(0,0,0,.2) !important;
   text-decoration: none !important;
   text-shadow: 0 1px rgba(255,255,255,.8) !important;
   font: 600 12px "Segoe UI", Tahoma, sans-serif !important;
@@ -325,7 +275,7 @@ button:hover,
   color: #fff !important;
   background: linear-gradient(180deg, rgba(102,195,230,.82), rgba(42,111,151,.62)) !important;
   border-color: rgba(255,255,255,.98) !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.7), 0 0 9px rgba(107,215,255,.62) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.7), 0 0 8px rgba(107,215,255,.5) !important;
   text-shadow: 0 1px 2px #174457 !important;
 }
 
@@ -337,9 +287,7 @@ button:active,
 .back-btn:active,
 .email-block a:active,
 .download-btn:active,
-.action-btn:active {
-  box-shadow: inset 0 2px 5px rgba(0,0,0,.3) !important;
-}
+.action-btn:active { box-shadow: inset 0 2px 5px rgba(0,0,0,.28) !important; }
 
 .project-card,
 .game-card,
@@ -357,11 +305,10 @@ button:active,
   color: var(--text) !important;
   background: linear-gradient(135deg, rgba(255,255,255,.49), rgba(214,244,225,.20)) !important;
   border: 1px solid rgba(255,255,255,.78) !important;
-  box-shadow: 0 4px 13px rgba(0,0,0,.29), inset 0 1px rgba(255,255,255,.82) !important;
-  backdrop-filter: blur(14px) saturate(125%) !important;
-  -webkit-backdrop-filter: blur(14px) saturate(125%) !important;
+  box-shadow: 0 3px 9px rgba(0,0,0,.23), inset 0 1px rgba(255,255,255,.82) !important;
 }
 
+/* Cards stay translucent, but do not blur the entire page behind every card. */
 .project-card:hover,
 .game-card:hover,
 .tier-card:hover,
@@ -373,10 +320,10 @@ button:active,
 .app-card:hover {
   background: linear-gradient(135deg, rgba(255,255,255,.62), rgba(191,238,211,.30)) !important;
   transform: translateY(-2px) !important;
-  box-shadow: 0 7px 17px rgba(0,0,0,.34), 0 0 8px rgba(112,213,167,.3) !important;
+  box-shadow: 0 5px 12px rgba(0,0,0,.27), 0 0 6px rgba(112,213,167,.25) !important;
 }
 
-.game-icon { filter: drop-shadow(0 2px 2px rgba(0,0,0,.28)) !important; }
+.game-icon { filter: drop-shadow(0 1px 2px rgba(0,0,0,.24)) !important; }
 
 table {
   width: 100% !important;
@@ -386,9 +333,7 @@ table {
   background: rgba(235,250,241,.30) !important;
   border: 1px solid rgba(255,255,255,.75) !important;
   border-radius: 7px !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,.25) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
+  box-shadow: 0 3px 9px rgba(0,0,0,.22) !important;
 }
 
 th {
@@ -424,9 +369,7 @@ tr:nth-child(even) td { background: rgba(207,238,219,.29) !important; }
   background: rgba(230,255,240,.50) !important;
   border: 1px solid rgba(255,255,255,.82) !important;
   border-radius: 4px !important;
-  box-shadow: inset 0 1px rgba(255,255,255,.9), 0 1px 3px rgba(0,0,0,.18) !important;
-  backdrop-filter: blur(6px) !important;
-  -webkit-backdrop-filter: blur(6px) !important;
+  box-shadow: inset 0 1px rgba(255,255,255,.9), 0 1px 2px rgba(0,0,0,.14) !important;
   font: 600 11px "Segoe UI", Tahoma, sans-serif !important;
 }
 
@@ -438,8 +381,6 @@ select {
   border: 1px solid rgba(255,255,255,.88) !important;
   border-radius: 4px !important;
   box-shadow: inset 0 1px 3px rgba(0,0,0,.16), 0 1px rgba(255,255,255,.8) !important;
-  backdrop-filter: blur(7px) !important;
-  -webkit-backdrop-filter: blur(7px) !important;
   font: 13px "Segoe UI", Tahoma, sans-serif !important;
 }
 
@@ -452,20 +393,20 @@ hr {
 img,
 video {
   border-radius: 5px !important;
-  box-shadow: 0 2px 7px rgba(0,0,0,.25) !important;
+  box-shadow: 0 2px 5px rgba(0,0,0,.2) !important;
 }
 
 footer {
-  width: min(960px, 94%) !important;
+  width: min(960px,94%) !important;
   margin: 14px auto !important;
   padding: 10px !important;
   color: #e7fff0 !important;
   background: linear-gradient(180deg, rgba(24,91,61,.58), rgba(4,50,31,.45)) !important;
   border: 1px solid rgba(255,255,255,.72) !important;
   border-radius: 8px !important;
-  box-shadow: 0 5px 15px rgba(0,0,0,.34), inset 0 1px rgba(255,255,255,.4) !important;
-  backdrop-filter: blur(13px) !important;
-  -webkit-backdrop-filter: blur(13px) !important;
+  box-shadow: 0 4px 11px rgba(0,0,0,.28), inset 0 1px rgba(255,255,255,.4) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
   text-align: center !important;
   font: 12px "Segoe UI", Tahoma, sans-serif !important;
 }
@@ -474,27 +415,25 @@ footer span { margin: 0 7px !important; }
 footer a { color: #c7ffe0 !important; }
 
 .altcore-page {
-  width: min(960px, 94%) !important;
+  width: min(960px,94%) !important;
   margin: 14px auto !important;
   padding: 20px !important;
   color: var(--text) !important;
   background: linear-gradient(135deg, rgba(255,255,255,.52), rgba(213,245,224,.22)) !important;
   border: 1px solid var(--glass-border) !important;
-  box-shadow: 0 8px 24px rgba(0,0,0,.36), inset 0 1px rgba(255,255,255,.92) !important;
-  backdrop-filter: blur(18px) saturate(135%) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(135%) !important;
+  box-shadow: 0 7px 18px rgba(0,0,0,.3), inset 0 1px rgba(255,255,255,.9) !important;
+  backdrop-filter: blur(12px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(120%) !important;
 }
 
-.altcore-logo { filter: drop-shadow(0 2px 3px rgba(0,0,0,.3)) !important; }
+.altcore-logo { filter: drop-shadow(0 1px 2px rgba(0,0,0,.25)) !important; }
 
 .altcore-notice {
   color: #3e381a !important;
   background: rgba(255,249,193,.48) !important;
   border: 1px solid rgba(255,255,255,.82) !important;
   border-radius: 6px !important;
-  box-shadow: 0 3px 9px rgba(0,0,0,.2), inset 0 1px rgba(255,255,255,.82) !important;
-  backdrop-filter: blur(9px) !important;
-  -webkit-backdrop-filter: blur(9px) !important;
+  box-shadow: 0 3px 7px rgba(0,0,0,.18), inset 0 1px rgba(255,255,255,.82) !important;
 }
 
 @media (max-width: 700px) {
@@ -506,12 +445,22 @@ footer a { color: #c7ffe0 !important; }
   .pc-banner,
   footer,
   marquee,
-  body > div[style*="position:fixed"] {
-    width: 94% !important;
-  }
+  body > div[style*="position:fixed"] { width: 94% !important; }
 
   .nav-logo,
   .topnav .brand { font-size: 23px !important; }
   h1 { font-size: 27px !important; }
   .nav-links a { padding: 4px 8px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card:hover,
+  .game-card:hover,
+  .tier-card:hover,
+  .step:hover,
+  .offering-card:hover,
+  .usecase-card:hover,
+  .spec-card:hover,
+  .altcore-card:hover,
+  .app-card:hover { transform: none !important; }
 }
