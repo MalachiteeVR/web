@@ -37,10 +37,10 @@ jobs:
               urls.append(f"  <url><loc>{escape(loc)}</loc></url>")
 
           xml = (
-              '<?xml version="1.0" encoding="UTF-8"?>\\n'
-              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n'
-              + "\\n".join(urls)
-              + "\\n</urlset>\\n"
+              '<?xml version="1.0" encoding="UTF-8"?>\n'
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+              + "\n".join(urls)
+              + "\n</urlset>\n"
           )
           Path("sitemap.xml").write_text(xml, encoding="utf-8")
           PY
